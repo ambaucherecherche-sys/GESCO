@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- dir="rtl"-->
+
+<head>
+    <!-- Required meta tags  -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="application-name" content="smartUIUX">
+    <meta name="apple-mobile-web-app-title" content="smartUIUX">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <link rel="apple-touch-icon" href="assets/img/logo-512.png">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>GESCO — Administration | SOLUTECH</title>
+    
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --adminuiux-content-font: "Open Sans", serif;
+            --adminuiux-content-font-weight: 400;
+            --adminuiux-title-font: "Poppins", serif;
+            --adminuiux-title-font-weight: 600;
+        }
+    </style>
+<script defer src="assets/js/app13a2.js?5242d2f600103545528d"></script><link href="assets/css/app13a2.css?5242d2f600103545528d" rel="stylesheet"><link href="assets/css/solutech-theme.css" rel="stylesheet"><script>
+// Filet de sécurité : si l'écran de chargement ne se masque pas naturellement
+// (ex: police externe lente/bloquée sur réseau mobile), on le force à disparaître
+// après 2.5s pour ne jamais bloquer l'interface.
+setTimeout(function () {
+    var loader = document.querySelector('.pageloader');
+    if (loader && loader.style.display !== 'none') { loader.style.display = 'none'; }
+}, 2500);
+</script>
+</head>
+
+  <body class="main-bg main-bg-opac main-bg-blur roundedui adminuiux-header-standard adminuiux-sidebar-standard adminuiux-mobile-footer-fill-theme adminuiux-header-transparent adminuiux-sidebar-fill-none scrollup" data-theme="light" data-sidebarfill="adminuiux-sidebar-fill-none" data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" tabindex="0" data-sidebarlayout="adminuiux-sidebar-standard" data-headerlayout="adminuiux-header-standard"
+    data-headerfill="adminuiux-header-transparent" data-bggradient="bg-r-gradient" style="">
+    <!-- Pageloader -->
+<div class="pageloader">
+    <div class="container h-100">
+        <div class="row justify-content-center align-items-center text-center h-100 pb-ios">
+            <div class="col-12 mb-auto pt-4"></div>
+            <div class="col-auto">
+                <img src="assets/img/logo.svg" alt="" class="height-80 mb-3">
+                <p class="h2 mb-0 text-theme-accent-1">SOLUTECH</p>
+                <p class="display-3 text-theme-1 fw-bold mb-4">GESCO</p>
+                <div class="loader12 mb-2 mx-auto"></div>
+            </div>
+            <div class="col-12 mt-auto pb-4">
+                <p class="small text-secondary">Veuillez patienter, préparation en cours...</p>
+            </div>
+        </div>
+    </div>
+</div>
+      <!-- standard header -->
+<!-- include:header -->
+
+<!-- include:search-modal -->
+                <div class="adminuiux-wrap">
+          <!-- Standard sidebar -->
+          <!-- Standard sidebar -->
+<!-- include:sidebar -->
+                        <main class="adminuiux-content has-sidebar" onclick="contentClick()">
+    <div class="container-fluid mt-3">
+        <div class="row gx-1 align-items-center mb-3">
+            <div class="col">
+                <nav aria-label="breadcrumb" class="mb-1">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="gesco-dashboard.html"><i class="bi bi-house-door"></i> Accueil</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Administration</li>
+                    </ol>
+                </nav>
+                <h4 class="mb-0">Administration</h4>
+            </div>
+        </div>
+
+        <!-- Onglets -->
+        <ul class="nav nav-pills adminuiux-nav mb-4" id="adminTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="tab-entreprise" data-bs-toggle="tab" data-bs-target="#pane-entreprise" type="button" role="tab">
+                    <i class="bi bi-building me-1"></i> Entreprise
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-utilisateurs" data-bs-toggle="tab" data-bs-target="#pane-utilisateurs" type="button" role="tab">
+                    <i class="bi bi-people me-1"></i> Utilisateurs &amp; rôles
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-caisse" data-bs-toggle="tab" data-bs-target="#pane-caisse" type="button" role="tab">
+                    <i class="bi bi-cash-coin me-1"></i> Caisse &amp; facturation
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-audit" data-bs-toggle="tab" data-bs-target="#pane-audit" type="button" role="tab">
+                    <i class="bi bi-clock-history me-1"></i> Journal d'audit
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+
+            <!-- ENTREPRISE -->
+            <div class="tab-pane fade show active" id="pane-entreprise" role="tabpanel">
+                <div class="card adminuiux-card border-0 shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <img src="assets/img/logo.svg" alt="Solutech" style="width:56px;height:56px;">
+                            <div>
+                                <h5 class="mb-0">SOLUTECH Innovation Group</h5>
+                                <p class="small text-secondary mb-0">Ces informations apparaissent sur les factures et les reçus.</p>
+                            </div>
+                        </div>
+
+                        <h6 class="mb-3">Identification</h6>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label small text-secondary mb-1">Raison sociale</label>
+                                <input type="text" class="form-control" value="SOLUTECH Innovation Group">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label small text-secondary mb-1">NIF</label>
+                                <input type="text" class="form-control" value="1000077472">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label small text-secondary mb-1">RCCM</label>
+                                <input type="text" class="form-control" value="TG-LFW-01-2026-M-14353">
+                            </div>
+                        </div>
+
+                        <h6 class="mb-3">Coordonnées</h6>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label small text-secondary mb-1">Adresse</label>
+                                <input type="text" class="form-control" value="Nukafou, Boulevard Jean Paul II à côté des Rails">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label small text-secondary mb-1">Ville</label>
+                                <input type="text" class="form-control" value="Lomé">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label small text-secondary mb-1">Boîte postale</label>
+                                <input type="text" class="form-control" value="22 BP : 170">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label small text-secondary mb-1">Téléphone</label>
+                                <input type="text" class="form-control" value="70 41 60 73">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label small text-secondary mb-1">Email</label>
+                                <input type="email" class="form-control" value="info@solutechtic.com">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label small text-secondary mb-1">Site web</label>
+                                <input type="text" class="form-control" value="www.solutechtic.com">
+                            </div>
+                        </div>
+
+                        <h6 class="mb-3">Comptes bancaires</h6>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label class="form-label small text-secondary mb-1">Ecobank</label>
+                                <input type="text" class="form-control" value="140207602001">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label small text-secondary mb-1">Banque Atlantique</label>
+                                <input type="text" class="form-control" value="040192180002">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label small text-secondary mb-1">Diamond Bank</label>
+                                <input type="text" class="form-control" value="263003225014">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-none d-flex justify-content-end gap-2 px-4 pb-4">
+                        <button class="btn btn-link text-secondary">Annuler</button>
+                        <button class="btn btn-theme">Enregistrer</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UTILISATEURS & RÔLES -->
+            <div class="tab-pane fade" id="pane-utilisateurs" role="tabpanel">
+                <div class="card adminuiux-card border-0 shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>
+                                <h6 class="mb-0">Utilisateurs</h6>
+                                <p class="small text-secondary mb-0" id="users-active-count">Chargement des utilisateurs…</p>
+                            </div>
+                            <button class="btn btn-theme btn-sm" type="button" id="users-create-button"><i class="bi bi-plus-lg"></i> Nouvel utilisateur</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table adminuiux-table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Utilisateur</th>
+                                        <th>Rôle</th>
+                                        <th>Téléphone</th>
+                                        <th>Statut</th>
+                                        <th class="text-end">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card adminuiux-card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h6 class="mb-1">Rôles disponibles</h6>
+                        <p class="small text-secondary mb-3">Les rôles applicatifs configurés actuellement sont les suivants.</p>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="border rounded p-3 h-100">
+                                    <span class="badge badge-light text-bg-theme-1 mb-2">Administrateur</span>
+                                    <p class="small mb-0">Peut gérer les comptes utilisateurs et accéder aux fonctions d’administration.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="border rounded p-3 h-100">
+                                    <span class="badge badge-light text-bg-secondary mb-2">Utilisateur standard</span>
+                                    <p class="small mb-0">Compte d’exploitation standard; ne peut pas administrer les comptes utilisateurs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CAISSE & FACTURATION -->
+            <div class="tab-pane fade" id="pane-caisse" role="tabpanel">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="card adminuiux-card border-0 shadow-sm h-100">
+                            <div class="card-body p-4">
+                                <h6 class="mb-3">Paramètres de caisse</h6>
+                                <div class="mb-3">
+                                    <label class="form-label small text-secondary mb-1">Modes de paiement acceptés</label>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" checked id="pm1"><label class="form-check-label" for="pm1">Espèces</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" checked id="pm2"><label class="form-check-label" for="pm2">Mobile Money</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" checked id="pm3"><label class="form-check-label" for="pm3">Carte bancaire</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="pm4"><label class="form-check-label" for="pm4">Chèque</label></div>
+                                </div>
+                                <div class="form-check form-switch mb-2">
+                                    <input class="form-check-input" type="checkbox" checked id="sw1">
+                                    <label class="form-check-label" for="sw1">Imprimer le ticket automatiquement</label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" checked id="sw2">
+                                    <label class="form-check-label" for="sw2">Ouvrir le tiroir-caisse à l'encaissement</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card adminuiux-card border-0 shadow-sm h-100">
+                            <div class="card-body p-4">
+                                <h6 class="mb-3">Paramètres de facturation</h6>
+                                <div class="mb-3">
+                                    <label class="form-label small text-secondary mb-1">Taux de TVA</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" value="18">
+                                        <span class="input-group-text">%</span>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small text-secondary mb-1">Préfixe de numérotation</label>
+                                    <input type="text" class="form-control" value="FA-2026/">
+                                    <p class="small text-secondary mb-0 mt-1">Les factures sont numérotées automatiquement et séquentiellement.</p>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small text-secondary mb-1">Conditions de paiement par défaut</label>
+                                    <input type="text" class="form-control" value="60% à la commande et 40% à la livraison">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small text-secondary mb-1">Durée de validité des devis</label>
+                                    <input type="text" class="form-control" value="1 mois">
+                                </div>
+                                <div class="mb-0">
+                                    <label class="form-label small text-secondary mb-1">Garantie par défaut</label>
+                                    <input type="text" class="form-control" value="1 an">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end gap-2 mt-4">
+                    <button class="btn btn-link text-secondary">Annuler</button>
+                    <button class="btn btn-theme">Enregistrer</button>
+                </div>
+            </div>
+
+            <!-- JOURNAL D'AUDIT -->
+            <div class="tab-pane fade" id="pane-audit" role="tabpanel">
+                <div class="card adminuiux-card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h6 class="mb-1">Journal d'audit</h6>
+                        <p class="small text-secondary mb-3">Connexions et actions sensibles enregistrées par le système.</p>
+                        <div class="table-responsive">
+                            <table class="table adminuiux-table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Utilisateur</th>
+                                        <th>Action</th>
+                                        <th>Détail</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="small">16/09/2026 08:12</td>
+                                        <td class="small">Aïcha Koffi</td>
+                                        <td><span class="badge badge-light text-bg-success">Connexion</span></td>
+                                        <td class="small text-secondary">Session ouverte</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="small">15/09/2026 16:22</td>
+                                        <td class="small">Aïcha Koffi</td>
+                                        <td><span class="badge badge-light text-bg-danger">Annulation vente</span></td>
+                                        <td class="small text-secondary">Vente V-3388 annulée</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="small">15/09/2026 11:05</td>
+                                        <td class="small">Yao Mensah</td>
+                                        <td><span class="badge badge-light text-bg-theme-1">Inventaire validé</span></td>
+                                        <td class="small text-secondary">12 écarts ajustés</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="small">14/09/2026 09:30</td>
+                                        <td class="small">Aïcha Koffi</td>
+                                        <td><span class="badge badge-light text-bg-secondary">Modification</span></td>
+                                        <td class="small text-secondary">Compte « Edem Lawson » désactivé</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+        </div>
+
+
+          <!-- footer -->
+          <!-- standard footer -->
+<!-- include:footer -->
+<!-- Page Level js -->
+
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/profile.js"></script>
+        <script src="assets/js/role-guard.js"></script>
+        <script src="assets/js/auth-guard.js"></script>
+</body>
+
+
+</html>

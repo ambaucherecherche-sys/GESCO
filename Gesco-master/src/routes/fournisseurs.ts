@@ -1,0 +1,28 @@
+import { Router } from "express";
+
+import {
+    getAllFournisseurs,
+    getFournisseurById,
+    getFournisseurStats,
+    createFournisseur,
+    updateFournisseur,
+    deleteFournisseur,
+} from "../services/fournisseurs.js";
+
+const router = Router();
+
+
+router.get("/", getAllFournisseurs);
+
+router.get("/:id", getFournisseurById);
+
+router.get("/:id/stats", getFournisseurStats);
+
+router.post("/", createFournisseur);
+
+router.put("/:id", updateFournisseur);
+
+router.delete("/:id", deleteFournisseur);
+
+
+export default router;

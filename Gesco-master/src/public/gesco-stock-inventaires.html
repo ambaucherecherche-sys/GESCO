@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!-- dir="rtl"-->
+
+<head>
+    <!-- Required meta tags  -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="application-name" content="smartUIUX">
+    <meta name="apple-mobile-web-app-title" content="smartUIUX">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <link rel="apple-touch-icon" href="assets/img/logo-512.png">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>GESCO — Stock — Inventaires | SOLUTECH</title>
+    <meta name="description" content="Suivez les inventaires de stock, les comptages physiques et les écarts de produits dans GESCO.">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --adminuiux-content-font: "Open Sans", serif;
+            --adminuiux-content-font-weight: 400;
+            --adminuiux-title-font: "Poppins", serif;
+            --adminuiux-title-font-weight: 600;
+        }
+    </style>
+<script defer src="assets/js/app13a2.js?5242d2f600103545528d"></script><link href="assets/css/app13a2.css?5242d2f600103545528d" rel="stylesheet"><link href="assets/css/solutech-theme.css" rel="stylesheet"><script>
+// Filet de sécurité : si l'écran de chargement ne se masque pas naturellement
+// (ex: police externe lente/bloquée sur réseau mobile), on le force à disparaître
+// après 2.5s pour ne jamais bloquer l'interface.
+setTimeout(function () {
+    var loader = document.querySelector('.pageloader');
+    if (loader && loader.style.display !== 'none') { loader.style.display = 'none'; }
+}, 2500);
+</script>
+</head>
+
+    <body class="main-bg main-bg-opac main-bg-blur roundedui adminuiux-header-standard adminuiux-sidebar-standard adminuiux-mobile-footer-fill-theme adminuiux-header-transparent adminuiux-sidebar-fill-none scrollup" data-theme="light" data-sidebarfill="adminuiux-sidebar-fill-none" data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" tabindex="0" data-sidebarlayout="adminuiux-sidebar-standard"
+        data-headerlayout="adminuiux-header-standard" data-headerfill="adminuiux-header-transparent" data-bggradient="bg-r-gradient" style="">
+        <!-- Pageloader -->
+<div class="pageloader">
+    <div class="container h-100">
+        <div class="row justify-content-center align-items-center text-center h-100 pb-ios">
+            <div class="col-12 mb-auto pt-4"></div>
+            <div class="col-auto">
+                <img src="assets/img/logo.svg" alt="" class="height-80 mb-3">
+                <p class="h2 mb-0 text-theme-accent-1">SOLUTECH</p>
+                <p class="display-3 text-theme-1 fw-bold mb-4">GESCO</p>
+                <div class="loader12 mb-2 mx-auto"></div>
+            </div>
+            <div class="col-12 mt-auto pb-4">
+                <p class="small text-secondary">Veuillez patienter, préparation en cours...</p>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- standard header -->
+<!-- include:header -->
+
+<!-- include:search-modal -->
+                <div class="adminuiux-wrap">
+                    <!-- Standard sidebar -->
+                    <!-- Standard sidebar -->
+<!-- include:sidebar -->
+                        <main class="adminuiux-content has-sidebar" onclick="contentClick()">
+    <div class="container-fluid mt-3">
+        <div class="row gx-1 align-items-center mb-3">
+            <div class="col">
+                <nav aria-label="breadcrumb" class="mb-1">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="gesco-dashboard.html"><i class="bi bi-house-door"></i> Accueil</a></li>
+                        <li class="breadcrumb-item">Stock</li><li class="breadcrumb-item active" aria-current="page">Inventaires</li>
+                    </ol>
+                </nav>
+                <h4 class="mb-0">Inventaires</h4>
+            </div>
+            <div class="col-auto"><button class="btn btn-theme" type="button"><i class="bi bi-plus-lg"></i> Nouvel inventaire</button></div>
+        </div>
+
+        <div class="row g-3 mb-4">
+            <div class="col-6 col-lg-3">
+                <div class="card adminuiux-card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="avatar avatar-40 rounded bg-theme-1-subtle text-theme-1 d-flex align-items-center justify-content-center"><i class="bi bi-clipboard-check"></i></span>
+                            <div>
+                                <h6 class="mb-0">Inventaires</h6>
+                                <p class="small text-secondary mb-0">Cette année</p>
+                            </div>
+                        </div>
+                        <h3 class="mb-0">0</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="card adminuiux-card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="avatar avatar-40 rounded text-warning d-flex align-items-center justify-content-center" style="background:color-mix(in oklab, var(--bs-warning) 14%, transparent);"><i class="bi bi-hourglass-split"></i></span>
+                            <div>
+                                <h6 class="mb-0">En cours</h6>
+                                <p class="small text-secondary mb-0">À terminer</p>
+                            </div>
+                        </div>
+                        <h3 class="mb-0 text-warning">0</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="card adminuiux-card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="avatar avatar-40 rounded bg-theme-1-subtle text-theme-1 d-flex align-items-center justify-content-center"><i class="bi bi-check2-circle"></i></span>
+                            <div>
+                                <h6 class="mb-0">Validés</h6>
+                                <p class="small text-secondary mb-0">Depuis le début</p>
+                            </div>
+                        </div>
+                        <h3 class="mb-0">0</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="card adminuiux-card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="avatar avatar-40 rounded text-danger d-flex align-items-center justify-content-center" style="background:color-mix(in oklab, var(--bs-danger) 14%, transparent);"><i class="bi bi-exclamation-triangle"></i></span>
+                            <div>
+                                <h6 class="mb-0">Écarts détectés</h6>
+                                <p class="small text-secondary mb-0">Articles en écart</p>
+                            </div>
+                        </div>
+                        <h3 class="mb-0 text-danger">0</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card adminuiux-card border-0 shadow-sm">
+            <div class="card-body">
+                <div class="row gx-3 gy-2 align-items-center mb-3">
+                    <div class="col">
+                        <h6 class="mb-0">Historique des inventaires</h6>
+                        <p class="small text-secondary mb-0">Comptage physique, comparaison au stock théorique, ajustements</p>
+                    </div>
+                    <div class="col-12 col-md-auto">
+                        <input id="inventaires-recherche" type="search" class="form-control" placeholder="Rechercher un titre..." aria-label="Rechercher un inventaire">
+                    </div>
+                    <div class="col-6 col-md-auto">
+                        <select id="inventaires-statut" class="form-select" aria-label="Filtrer par statut">
+                            <option value="" selected>Tous les statuts</option>
+                            <option value="en_cours">En cours</option>
+                            <option value="termine">Validé</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table adminuiux-table align-middle">
+                        <thead><tr><th>Référence</th><th>Date</th><th>Responsable</th><th class="text-center">Comptage</th><th class="text-center">Écarts</th><th>Statut</th><th class="text-end">Actions</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="row gx-3 align-items-center mt-3">
+                    <div class="col"><p class="small text-secondary mb-0">Chargement…</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="modal fade" id="inventaireComptage" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <div>
+                    <h5 class="modal-title mb-0" id="inventaire-comptage-titre">Comptage d'inventaire</h5>
+                    <p class="small text-secondary mb-0" id="inventaire-comptage-sous-titre"></p>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger d-none" id="inventaire-comptage-alerte" role="alert"></div>
+                <p class="small text-secondary">Saisissez les quantités comptées pour chaque produit, puis enregistrez le comptage ou clôturez l'inventaire pour appliquer les ajustements de stock.</p>
+                <div class="mb-3">
+                    <input id="inventaire-comptage-recherche" type="search" class="form-control" placeholder="Rechercher un produit..." aria-label="Rechercher un produit à compter">
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-sm align-middle mb-0">
+                        <thead>
+                            <tr><th>Produit</th><th class="text-center">Théorique</th><th class="text-center" style="width:130px;">Compté</th><th class="text-center">Écart</th></tr>
+                        </thead>
+                        <tbody id="inventaire-comptage-corps"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer border-0">
+                <button class="btn btn-link text-secondary" type="button" data-bs-dismiss="modal">Fermer</button>
+                <p class="small text-secondary mb-0 me-auto" id="inventaire-comptage-aide-cloture"></p>
+                <button class="btn btn-outline-primary" type="button" id="inventaire-comptage-enregistrer">Enregistrer le comptage</button>
+                <button class="btn btn-theme" type="button" id="inventaire-comptage-cloturer">Clôturer l'inventaire</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+                <!-- View Order details -->
+                <div class="offcanvas offcanvas-end shadow border-0 w-100 maxwidth-dynamic" tabindex="-1" id="view-customer" data-bs-scroll="true" data-bs-backdrop="false" style="--mw-dynamic:450px;">
+                    <div class="offcanvas-header border-bottom">
+                        <div class="flex-grow-1">
+                            <button class="btn btn-link"><i class="bi bi-pencil"></i>Modifier</button>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
+                    </div>
+                    <div class="small text-center px-2 py-1 bg-theme-1-subtle text-theme-1 theme-green">Active Client</div>
+                    <div class="offcanvas-body">
+                        <!-- customer -->
+                        <div class="row align-items-center mb-3">
+                            <div class="col-12 text-center">
+                                <figure class="avatar avatar-100 coverimg rounded-circle mx-auto mb-3">
+                                    <img src="assets/img/modern-ai-image/user-1.jpg" alt="">
+                                </figure>
+                            </div>
+                            <div class="col-12">
+                                <a href="gesco-clients-detail.html" class="style-none">
+                                    <h5 class="text-center">John Doe <i class="bi bi-box-arrow-in-up-right fs-14"></i></h5>
+                                </a>
+                                <p class="text-theme-1 theme-yellow text-center mb-3"><i class="bi bi-star-fill"></i> Prime VIP</p>
+                                <div class="row gx-3 gx-lg-4">
+                                    <div class="col-12 col-md-6">
+                                        <p class="text-secondary mb-2"><i class="bi bi-cake"></i> 28 Jan 2001, 24 years</p>
+                                        <p class="text-secondary mb-2"><i class="bi bi-gender-male"></i> Male</p>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <p class="text-secondary mb-2"><i class="bi bi-envelope"></i> selom.agbeko@email.tg</p>
+                                        <p class="text-secondary mb-2"><i class="bi bi-whatsapp"></i> +820 58023O554A1</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- order items-->
+                        <h6 class="mb-3">Orders (2 Items)</h6>
+                        <div class="list-group mb-3 mb-lg-4">
+                            <a href="gesco-ventes-detail.html" class="list-group-item list-group-action px-2">
+                                <!-- order status -->
+                                <div class="row gx-3 align-items-center mb-3">
+                                    <div class="col">
+                                        <span class="badge badge-light text-bg-theme-1 theme-green">Acceptée</span>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="btn btn-sm btn-square btn-link"><i class="bi bi-arrow-right"></i></div>
+                                    </div>
+                                </div>
+                                <ul class="progress-stepbar mb-3 mb-lg-4">
+                                    <li class="completed"><span>Ordered</span></li>
+                                    <li class="stop"><span>Acceptée</span></li>
+                                    <li class=""><span>Ready</span></li>
+                                    <li class=" "><span>Shipped</span></li>
+                                    <li><span>Livrée</span></li>
+                                </ul>
+                                <div class="row gx-3 align-items-center">
+                                    <div class="col">
+                                        <h6 class="mb-0">265 FCFA</h6>
+                                        <p class="small text-secondary">#OR55213453</p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="mb-0">26 Jan 2025</p>
+                                        <p class="small text-secondary">5 Items</p>
+                                    </div>
+                                    <div class="col-auto avatar-group">
+                                        <figure class="avatar avatar-40 coverimg rounded" data-bs-toggle="tooltip" title="Bracelet women Platinum">
+                                            <img src="assets/img/ecommerce/image-5.jpg" alt="">
+                                        </figure>
+                                        <figure class="avatar avatar-40 coverimg rounded" data-bs-toggle="tooltip" title="Sendal women Platinum">
+                                            <img src="assets/img/ecommerce/image-10.jpg" alt="">
+                                        </figure>
+                                        <div class="avatar avatar-40 bg-theme-accent-1 rounded" data-bs-toggle="tooltip" data-bs-html="true" title="Lightbulb WiFi connect<br>Lipsticks<br>Bag Vincent Toil">
+                                            <p>+3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="gesco-ventes-retours.html" class="list-group-item px-2">
+                                <div class="row gx-3 align-items-center mb-3">
+                                    <div class="col">
+                                        <span class="badge badge-light text-bg-theme-1 theme-grey">Terminée</span>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="btn btn-sm btn-square btn-link"><i class="bi bi-arrow-right"></i></div>
+                                    </div>
+                                </div>
+                                <div class="row gx-3 align-items-center">
+                                    <div class="col">
+                                        <h6 class="mb-0">134 FCFA</h6>
+                                        <p class="small text-secondary">#OR55213453</p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="mb-0">30 Feb 2025</p>
+                                        <p class="small text-secondary">2 Items</p>
+                                    </div>
+                                    <div class="col-auto avatar-group">
+                                        <figure class="avatar avatar-40 coverimg rounded" data-bs-toggle="tooltip" title="Sofa Single Coco">
+                                            <img src="assets/img/ecommerce/image-6.jpg" alt="">
+                                        </figure>
+                                        <figure class="avatar avatar-40 coverimg rounded" data-bs-toggle="tooltip" title="High Heels Footwear">
+                                            <img src="assets/img/ecommerce/image-9.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- address -->
+                        <h6 class="mb-3">Client Address</h6>
+                        <div class="row gx-3 gx-lg-4">
+                            <div class="col">
+                                <div class="card bg-none mb-3 mb-lg-4">
+                                    <div class="card-body">
+                                        <p class="mb-3 fw-medium"><i class="bi bi-house-door me-1"></i> Home</p>
+                                        <p class="small text-secondary">Test data 103909 Witamer CR, Niagara Falls, NY 14305,<br>Lomé</p>
+                                        <button class="btn btn-sm btn-link">Locate <i class="bi bi-arrow-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card bg-none mb-3 mb-lg-4">
+                                    <div class="card-body">
+                                        <p class="mb-3 fw-medium"><i class="bi bi-buildings me-1"></i> Office</p>
+                                        <p class="small text-secondary">Test data 103909 Witamer CR, Niagara Falls, NY 14305,<br>Lomé</p>
+                                        <button class="btn btn-sm btn-link">Locate <i class="bi bi-arrow-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- payment -->
+                        <h6 class="mb-3">Payment Method</h6>
+                        <div class="row gx-3 gx-lg-4">
+                            <div class="col-12 col-md-6 mb-3 mb-lg-4">
+                                <div class="card bg-none mb-2">
+                                    <div class="card-body">
+                                        <p class="mb-3 fw-medium"><i class="bi bi-globe me-1"></i> Net Banking</p>
+                                        <p class="small text-secondary mb-1">AmericaSpice Bank</p>
+                                        <p class="small text-secondary mb-1">A/C: 200525XXXXXX5524</p>
+                                        <p class="small text-secondary">16 Transactions</p>
+                                    </div>
+                                </div>
+                                <p class="small text-secondary text-truncated text-center">Last: 265 FCFA <i class="bi bi-check-all text-theme-1 theme-green"></i></p>
+                            </div>
+                            <div class="col-12 col-md-6 mb-3 mb-lg-4">
+                                <div class="swiper swipernav">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide maxwidth-200">
+                                            <div class="card adminuiux-card bg-theme-1 overflow-hidden w-100 mb-2">
+                                                <div class="card-body p-3 z-index-1">
+                                                    <div class="row align-items-center mb-3">
+                                                        <div class="col-auto align-self-center"><i class="bi bi-credit-card fs-5"></i></div>
+                                                        <div class="col text-end">
+                                                            <p class="lh-14"><span class="fs-12 opacity-50">City Bank</span><br><small>Carte bancaire</small></p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="h6 small my-3">000 0000 0001 54659</p>
+                                                    <div class="row">
+                                                        <div class="col-auto">
+                                                            <p class="lh-14"><span class="fs-12 opacity-50">Expiration</span><br><small>09/023</small></p>
+                                                        </div>
+                                                        <div class="col text-end">
+                                                            <p class="lh-14"><span class="fs-12 opacity-50">Titulaire de la carte</span><br><small>adminuiux</small></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="small text-secondary text-truncated text-center">Last: 36 FCFA <i class="bi bi-check-all text-theme-1 theme-green"></i></p>
+                                        </div>
+                                        <div class="swiper-slide maxwidth-200">
+                                            <div class="card adminuiux-card bg-theme-1 theme-blue overflow-hidden w-100 mb-2">
+                                                <div class="card-body p-3 z-index-1">
+                                                    <div class="row align-items-center mb-3">
+                                                        <div class="col-auto align-self-center"><i class="bi bi-credit-card fs-5"></i></div>
+                                                        <div class="col text-end">
+                                                            <p class="lh-14"><span class="fs-12 opacity-50">City Bank</span><br><small>Carte bancaire</small></p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="h6 small my-3">000 0000 0001 546598</p>
+                                                    <div class="row">
+                                                        <div class="col-auto">
+                                                            <p class="lh-14"><span class="fs-12 opacity-50">Expiration</span><br><small>09/023</small></p>
+                                                        </div>
+                                                        <div class="col text-end">
+                                                            <p class="lh-14"><span class="fs-12 opacity-50">Titulaire de la carte</span><br><small>adminuiux</small></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="small text-secondary text-truncated text-center">Last: 54 FCFA <i class="bi bi-check-all text-theme-1 theme-green"></i></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- chat -->
+                        <div class="row gx-3 align-items-center mb-3">
+                            <div class="col-auto">
+                                <h6>Chat</h6>
+                            </div>
+                            <div class="col-auto">
+                                <span class="badge badge-sm small text-bg-theme-1 theme-red">2 New</span>
+                            </div>
+                        </div>
+
+                        <div class="card bg-none overflow-hidden">
+                            <div class="card-body overflow-auto height-dynamic" style="--h-dynamic: 400px">
+                                <div class="chat-list small">
+                                    <div class="collapse" id="searchchat">
+                                        <div class="mb-3">
+                                            <div class="input-group"><input type="search" class="form-control" placeholder="Search in chat... " value=""> <button class="btn btn-square btn-theme theme-red" data-bs-toggle="collapse" data-bs-target="#searchchat"><i class="bi bi-x"></i></button></div>
+                                        </div>
+                                    </div>
+                                    <div class="row no-margin left-chat">
+                                        <div class="col-12">
+                                            <div class="chat-block">
+                                                <div class="row gx-3">
+                                                    <div class="col">
+                                                        <p class="small mb-2"><a href="#" class="style-none">Kodjo Amegan</a></p>
+                                                        <p>Hi!</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <p class="text-secondary small time"><i class="bi bi-check"></i> 9:00 pm</p>
+                                        </div>
+                                    </div>
+                                    <div class="row no-margin right-chat">
+                                        <div class="col-12">
+                                            <div class="chat-block">
+                                                <div class="row gx-3">
+                                                    <div class="col">Hi!<br>Yes please tell us your query.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 text-end">
+                                            <p class="text-secondary small time"><i class="bi bi-check"></i> 9:10 pm</p>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center text-center">
+                                        <div class="col-auto text-center">
+                                            <div class="alert alert-light small mx-auto py-1 mb-3">26 November 2024</div>
+                                        </div>
+                                    </div>
+                                    <div class="row no-margin left-chat">
+                                        <div class="col-12">
+                                            <div class="chat-block">
+                                                <div class="row gx-3">
+                                                    <div class="col">
+                                                        <p class="small mb-2"><a href="#" class="style-none">Mr. Edem Lawson</a></p>Adminuiux is amazing and we thank you. How can we buy?
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <p class="text-secondary small time"><i class="bi bi-check-all text-primary"></i> 8:00 pm</p>
+                                        </div>
+                                    </div>
+                                    <div class="row no-margin right-chat first">
+                                        <div class="col-12">
+                                            <div class="chat-block">
+                                                <div class="row gx-3">
+                                                    <div class="col">
+                                                        <div class="position-relative mb-2 figure">
+                                                            <div class="position-absolute end-0 top-0">
+                                                                <button class="btn btn-square btn-theme m-2"><i class="bi bi-download"></i></button>
+                                                            </div>
+                                                            <img src="assets/img/ecommerce/image-1.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row no-margin right-chat">
+                                        <div class="col-12">
+                                            <div class="chat-block">
+                                                <div class="row gx-3">
+                                                    <div class="col">Thank you too. You can buy it from preview page and click on buy now.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 text-end">
+                                            <p class="text-secondary small time"><i class="bi bi-check-all text-primary"></i> 8:00 pm</p>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center text-center">
+                                        <div class="col-auto text-center">
+                                            <div class="alert alert-light small mx-auto py-1 mb-3">27 November 2024</div>
+                                        </div>
+                                    </div>
+                                    <div class="row no-margin left-chat first">
+                                        <div class="col-12">
+                                            <div class="chat-block">
+                                                <div class="row gx-3">
+                                                    <div class="col">
+                                                        <p class="small mb-2"><a href="#" class="style-none">Ms. Jully CTO</a></p>
+                                                        <div class="position-relative figure">
+                                                            <video src="../adminuiux.mp4" controls="" preload="none" class="mb-0"></video>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row no-margin left-chat">
+                                        <div class="col-12">
+                                            <div class="chat-block">
+                                                <div class="row gx-3">
+                                                    <div class="col">We also love this small presentation.</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <p class="text-secondary small time"><i class="bi bi-check-all text-primary"></i> 8:00 pm</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row no-margin right-chat">
+                                        <div class="col-12">
+                                            <div class="chat-block">
+                                                <div class="row gx-3">
+                                                    <div class="col">
+                                                        <p>Ohh... Thats great. Adminuiux is HTML template can be used in various business domains like SAAS, CRM, Content Management, Manufacturing, inventory, IT, administration etc.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 text-end">
+                                            <p class="text-secondary small time"><i class="bi bi-check-all text-primary"></i> 8:00 pm</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-none">
+                                <div class="input-group">
+                                    <button class="btn btn-square btn-link rounded-circle"><i class="bi bi-paperclip"></i></button>
+                                    <input class="form-control rounded mx-2" placeholder="Type your message... " value="">
+                                    <button class="btn btn-square btn-link rounded-circle" type="button"><i class="bi bi-send"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                    <!-- ai-chat  -->
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="ai-chat" data-bs-scroll="true" data-bs-backdrop="false" style="--bs-offcanvas-width: 500px;">
+    <div class="offcanvas-header border-bottom">
+        <div class="flex-grow-1">
+            <h6 class="mb-0">AI Assistant</h6>
+            <p class="text-secondary small">Toujours actif</p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
+    </div>
+
+    <!-- Messages Body Container (matching ecommerce-ai.html layout) -->
+    <div class="offcanvas-body chat-list overflow-y-auto px-3" id="ai-offcanvas-messages-container">
+        <!-- Messages will be dynamically rendered here -->
+    </div>
+
+    <!-- Chat Input Area with Suggestions (matching ecommerce-ai.html layout) -->
+    <div class="offcanvas-footer border-top p-3 bg-light-opacity">
+        <div class="card adminuiux-card border-0 shadow-none bg-none mb-0">
+            <div class="card-header pb-0 bg-none border-0 px-0 pt-0">
+                <p class="small text-secondary mb-2">Tip: Select chips/tags (Preset) below to see preview different content.</p>
+                <!-- Suggestion Pills / Quick prompts -->
+                <div class="d-flex flex-wrap" id="ai-offcanvas-suggestions-bar">
+                    <!-- Suggestions will be dynamically rendered here -->
+                </div>
+            </div>
+            <div class="card-body px-0 pb-0 pt-2">
+                <textarea class="form-control bg-none mb-3" id="ai-offcanvas-input" placeholder="Type your message... " style="resize: none;" rows="1"></textarea>
+                <div class="row gx-3">
+                    <div class="col-auto"><button class="btn btn-square btn-link border"><i class="bi bi-emoji-smile"></i></button></div>
+                    <div class="col-auto"><button class="btn btn-square btn-link border"><i class="bi bi-paperclip"></i></button></div>
+                    <div class="col"></div>
+                    <div class="col-auto"><button class="btn btn-square btn-link border" type="button" id="ai-offcanvas-send-btn" onclick="handleOffcanvasSendMessage()"><i class="bi bi-send"></i></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Offcanvas Interactive Javascript -->
+<script src="assets/js/ecommerce/ecommerce-ai-chat.js"></script>
+
+                        <!-- footer -->
+                        <!-- standard footer -->
+<!-- include:footer -->
+<!-- Page Level js -->
+                                
+
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/profile.js"></script>
+        <script src="assets/js/role-guard.js"></script>
+        <script src="assets/js/auth-guard.js"></script>
+</body>
+
+
+</html>

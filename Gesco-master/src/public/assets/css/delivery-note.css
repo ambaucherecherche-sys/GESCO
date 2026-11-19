@@ -1,0 +1,207 @@
+/* ==========================================================================
+   BON DE LIVRAISON SOLUTECH — surcharges du gabarit facture
+   (invoice-engine.css fournit la base : feuille A4, en-tête et pied de page)
+   ========================================================================== */
+
+/* Corps du document : reprise fidèle du modèle corps_bon_livraison.html */
+.delivery-body {
+  display: block;
+}
+
+.delivery-client {
+  display: flex;
+  gap: 7mm;
+  font-size: 12.8pt;
+}
+
+.delivery-label {
+  font-weight: 700;
+  font-size: 10.8pt;
+  padding-top: 0.5mm;
+  white-space: nowrap;
+}
+
+.delivery-client-name {
+  font-family: "Palatino Linotype", Georgia, serif;
+  font-weight: 700;
+  line-height: 1.35;
+  max-width: 125mm;
+}
+
+.delivery-date {
+  text-align: right;
+  margin-top: 21.4mm;
+  font-size: 9.45pt;
+}
+
+.delivery-date strong {
+  margin-right: 2mm;
+}
+
+.delivery-title {
+  text-align: center;
+  margin: 23.8mm 0 9.5mm;
+  font-family: "Palatino Linotype", Georgia, serif;
+  font-size: 16.2pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 1mm;
+  letter-spacing: 0.3px;
+}
+
+/* Tableau : Référence | Désignation | Quantités */
+.delivery-table {
+  border-color: #777777;
+  font-size: 10.1pt;
+}
+
+.delivery-table .col-ref   { width: 12%; }
+.delivery-table .col-qty   { width: 15%; }
+.delivery-table .col-desc  { width: 73%; }
+
+/* Livraison partielle : colonnes « Quantité livrée » + « Reste » après la
+   désignation. */
+.delivery-table.is-partielle .col-ref          { width: 14%; }
+.delivery-table.is-partielle .col-qty-partial  { width: 20%; }
+.delivery-table.is-partielle .col-reste        { width: 20%; }
+.delivery-table.is-partielle .col-desc-partial { width: 46%; }
+
+.delivery-table th,
+.delivery-table td {
+  border-color: #777777;
+}
+
+.delivery-table th.ref {
+  text-align: left;
+}
+
+.delivery-table td.ref,
+.delivery-sheet .delivery-table td.ref {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 8.8pt;
+}
+
+.delivery-table td.designation {
+  padding-left: 2.4mm;
+}
+
+.delivery-table td.qte,
+.delivery-sheet .delivery-table td.qte {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.delivery-table thead th {
+  padding: 1.9mm 2.4mm;
+  height: auto;
+  font-size: 9.45pt;
+  color: #444444;
+}
+
+.delivery-table tbody td {
+  padding: 1.9mm 2.4mm;
+  font-size: 10.1pt;
+}
+
+.delivery-sheet .delivery-table tbody td {
+  vertical-align: middle;
+}
+
+.delivery-signatures {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 26.2mm;
+  padding: 0 2.5mm;
+  font-size: 8.1pt;
+  font-weight: 700;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+/* En-tête « Quantité livrée » empilé sur deux lignes pour rester compact */
+.delivery-table .th-qty-livree {
+  padding: 1.4mm 1mm;
+  line-height: 1.1;
+}
+
+.delivery-table .th-qty-livree .th-line-1,
+.delivery-table .th-qty-livree .th-line-2 {
+  display: block;
+}
+
+.delivery-table .th-qty-livree .th-line-2 {
+  font-size: 7.6pt;
+  font-weight: 600;
+}
+
+/* « Reste » centré comme les autres quantités */
+.delivery-table .cell-reste {
+  font-weight: 700;
+}
+
+/* Le tableau garde la hauteur naturelle de ses lignes, comme le modèle. */
+.delivery-sheet .table-section {
+  height: auto;
+  min-height: 0;
+}
+
+.delivery-sheet .items-table {
+  height: auto;
+  min-height: 0;
+}
+
+.delivery-sheet .items-table tbody td {
+  height: auto;
+}
+
+/* Cellule "Réf. / N° de série" éditable */
+.cell-serial {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5mm;
+}
+
+.serial-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 8.8pt;
+  text-align: center;
+  color: #000000;
+  outline: none;
+}
+
+.serial-input::placeholder {
+  color: #b0b0b0;
+  font-style: italic;
+}
+
+@media print {
+  .serial-input {
+    border: none;
+  }
+
+  .serial-input::placeholder {
+    color: transparent;
+  }
+}
+
+.error {
+  width: min(210mm, calc(100% - 32px));
+  margin: 24px auto;
+  padding: 18px;
+  border: 1px solid #dc3545;
+  border-radius: 5px;
+  color: #842029;
+  background: #f8d7da;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

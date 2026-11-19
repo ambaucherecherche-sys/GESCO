@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- dir="rtl"-->
+
+<head>
+    <!-- Required meta tags  -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="application-name" content="smartUIUX">
+    <meta name="apple-mobile-web-app-title" content="smartUIUX">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <link rel="apple-touch-icon" href="assets/img/logo-512.png">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>GESCO — Caisse — Historique | SOLUTECH</title>
+    
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --adminuiux-content-font: "Open Sans", serif;
+            --adminuiux-content-font-weight: 400;
+            --adminuiux-title-font: "Poppins", serif;
+            --adminuiux-title-font-weight: 600;
+        }
+    </style>
+<script defer src="assets/js/app13a2.js?5242d2f600103545528d"></script><link href="assets/css/app13a2.css?5242d2f600103545528d" rel="stylesheet"><link href="assets/css/solutech-theme.css" rel="stylesheet"><script>
+// Filet de sécurité : si l'écran de chargement ne se masque pas naturellement
+// (ex: police externe lente/bloquée sur réseau mobile), on le force à disparaître
+// après 2.5s pour ne jamais bloquer l'interface.
+setTimeout(function () {
+    var loader = document.querySelector('.pageloader');
+    if (loader && loader.style.display !== 'none') { loader.style.display = 'none'; }
+}, 2500);
+</script>
+</head>
+
+    <body class="main-bg main-bg-opac main-bg-blur roundedui adminuiux-header-standard adminuiux-sidebar-standard adminuiux-mobile-footer-fill-theme adminuiux-header-transparent adminuiux-sidebar-fill-none scrollup" data-theme="light" data-sidebarfill="adminuiux-sidebar-fill-none" data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" tabindex="0" data-sidebarlayout="adminuiux-sidebar-standard"
+        data-headerlayout="adminuiux-header-standard" data-headerfill="adminuiux-header-transparent" data-bggradient="bg-r-gradient" style="">
+        <!-- Pageloader -->
+<div class="pageloader">
+    <div class="container h-100">
+        <div class="row justify-content-center align-items-center text-center h-100 pb-ios">
+            <div class="col-12 mb-auto pt-4"></div>
+            <div class="col-auto">
+                <img src="assets/img/logo.svg" alt="" class="height-80 mb-3">
+                <p class="h2 mb-0 text-theme-accent-1">SOLUTECH</p>
+                <p class="display-3 text-theme-1 fw-bold mb-4">GESCO</p>
+                <div class="loader12 mb-2 mx-auto"></div>
+            </div>
+            <div class="col-12 mt-auto pb-4">
+                <p class="small text-secondary">Veuillez patienter, préparation en cours...</p>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- standard header -->
+<!-- include:header -->
+
+<!-- include:search-modal -->
+                <div class="adminuiux-wrap">
+                    <!-- Standard sidebar -->
+                    <!-- Standard sidebar -->
+<!-- include:sidebar-caisse -->
+                        <main class="adminuiux-content has-sidebar" onclick="contentClick()">
+                            <!-- breadcrumb -->
+                            <div class="container mt-3">
+                                <div class="row gx-1 align-items-center">
+                                    <div class="col col-sm mb-3 mb-md-0">
+                                        <nav aria-label="breadcrumb" class="mb-1">
+                                            <ol class="breadcrumb mb-0">
+                                                <li class="breadcrumb-item bi"><a href="gesco-dashboard.html"><i class="bi bi-house-door"></i>Tableau de bord</a></li>
+                                                <li class="breadcrumb-item bi"><a href="gesco-facturation.html">Finance</a></li>
+                                                <li class="breadcrumb-item active bi" aria-current="page">Finance Billing</li>
+                                            </ol>
+                                        </nav>
+                                        <h4>Billing</h4>
+                                    </div>
+                                    <div class="col-auto mb-3 mb-md-0">
+                                        <div class="input-group width-250">
+                                            <input type="text" class="form-control bg-none text-center" id="daterangepickerranges">
+                                            <span class="input-group-text bg-none" id="calendarpickerrange" onclick="jQuery(this).prev().click()">
+                                                <i class="bi bi-calendar"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- content -->
+                            <div class="container mt-3 mt-lg-4 mt-xl-5" id="main-content">
+
+                                <!-- summary -->
+                                <div class="row gx-3 gx-lg-4">
+                                    <div class="col-12 col-sm-6 col-lg-3">
+                                        <div class="card bg-none mb-3 mb-lg-4">
+                                            <div class="card-body">
+                                                <div class="row gx-3 align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="avatar avatar-80">
+                                                            <div id="circleprogressblue1" class=" lh-14"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <p class="text-secondary small mb-0">Revenue </p>
+                                                        <h4 class="mb-0">12 501 FCFA</h4>
+                                                        <span class="badge badge-sm badge-light text-bg-success"><i class="bi bi-caret-up-fill"></i> 2.75%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-3">
+                                        <div class="card bg-none mb-3 mb-lg-4">
+                                            <div class="card-body">
+                                                <div class="row gx-3 align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="avatar avatar-80">
+                                                            <div id="circleprogressgreen1" class=" lh-14"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <p class="text-secondary small mb-0">Expense </p>
+                                                        <h4 class="mb-0">3 134 FCFA</h4>
+                                                        <span class="badge badge-sm badge-light text-bg-success"><i class="bi bi-caret-down-fill"></i> 1.50%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-3">
+                                        <div class="card bg-none mb-3 mb-lg-4">
+                                            <div class="card-body">
+                                                <div class="row gx-3 align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="avatar avatar-80">
+                                                            <div id="circleprogressblue" class=" lh-20"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <p class="text-secondary small mb-0">Retours Cost</p>
+                                                        <h4 class="mb-0">134 FCFA</h4>
+                                                        <span class="badge badge-sm badge-light text-bg-danger"><i class="bi bi-caret-down-fill"></i> 1.50%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-3">
+                                        <div class="card bg-none mb-3 mb-lg-4">
+                                            <div class="card-body">
+                                                <div class="row gx-3 align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="avatar avatar-80">
+                                                            <div id="circleprogressyellow" class=" lh-20"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <p class="text-secondary small mb-0">Shipping Cost</p>
+                                                        <h4 class="mb-0">3 000 FCFA</h4>
+                                                        <span class="badge badge-sm badge-light text-bg-danger"><i class="bi bi-caret-down-fill"></i> 2.65%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- chart  -->
+                                <div class="row gx-3 gx-lg-4">
+                                    <!-- summary and que balance -->
+                                    <div class="col-12 col-md-6 col-xl-6">
+                                        <div class="card bg-none mb-3 mb-lg-4">
+                                            <div class="card-body">
+                                                <div class="row gx-3 align-items-center mb-3">
+                                                    <div class="col-auto">
+                                                        <div class="avatar avatar-50 rounded card"><i class="bi bi-bar-chart"></i></div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <h6 class="mb-0">Summary</h6>
+                                                        <p class="small text-secondary">Product Date Growth <span class="badge badge-sm text-bg-success"><i class="bi bi-caret-up-fill"></i> 2.11%</span></p>
+                                                    </div>
+                                                </div>
+                                                <h3 class="mb-0">2501 FCFA</h3>
+                                                <h6 class="mb-0">Open order amount</h6>
+                                                <p class="small text-secondary mb-3">1500 FCFA received - 65% prepaid orders</p>
+                                                <div class="height-240">
+                                                    <canvas id="summarychart"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- sales revenue -->
+                                    <div class="col-12 col-md-6 col-xl-6">
+                                        <div class="card bg-none mb-3 mb-lg-4">
+                                            <div class="card-body">
+                                                <div class="row gx-3 align-items-center mb-3">
+                                                    <div class="col-auto">
+                                                        <div class="avatar avatar-50 rounded card"><i class="bi bi-cash-stack"></i></div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <h6 class="mb-0">Revenue Generated</h6>
+                                                        <p class="small text-secondary">Total decreased from previous <span class="text-danger"><i class="bi bi-caret-down-fill"></i> 0.86%</span></p>
+                                                    </div>
+                                                </div>
+                                                <h3 class="mb-0">12 501 FCFA</h3>
+                                                <p class="small text-secondary">Total des ventes</p>
+                                                <div class="height-160 mb-3">
+                                                    <canvas id="revenuchart"></canvas>
+                                                </div>
+                                                <div class="row align-items-center">
+                                                    <div class="col-6 col-md-6 col-lg-5">
+                                                        <div class="card adminuiux-card bg-theme-1">
+                                                            <div class="card-body z-index-1">
+                                                                <h4 class="fw-medium text mb-0">12 501 FCFA</h4>
+                                                                <p class="opacity-75">Income <span class="fs-14"><i class="bi bi-arrow-up"></i> 11.5%</span></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6 col-md-6 col-lg-5">
+                                                        <div class="card adminuiux-card bg-theme-1-subtle">
+                                                            <div class="card-body z-index-1">
+                                                                <h4 class="fw-medium mb-0">3 134 FCFA</h4>
+                                                                <p class="text-secondary">Expense <span class="text-success fs-14"><i class="bi bi-arrow-up"></i> 11.5%</span></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- table transactions -->
+                                <div class="card bg-none mb-3 mb-lg-4">
+                                    <div class="card-body">
+                                        <div class="row gx-3 align-items-center mb-3">
+                                            <div class="col-auto">
+                                                <div class="avatar avatar-50 rounded card"><i class="bi bi-arrow-down-up"></i></div>
+                                            </div>
+                                            <div class="col">
+                                                <h6 class="mb-0">Transactions</h6>
+                                                <p class="small text-secondary">Income transaction rose to <b>1,202</b> <span class="text-success"><i class="bi bi-caret-up-fill"></i> 5.11%</span></p>
+                                            </div>
+                                            <div class="col-5 col-md-4 col-lg-3 col-xl-auto mb-3 mb-lg-2">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-none"><i class="bi bi-search"></i></span>
+                                                    <input class="form-control pe-0 bg-none" type="search" placeholder="Search Invoice...">
+                                                </div>
+                                            </div>
+                                            <div class="col-5 col-md-4 col-lg-3 col-xl-auto mb-3 mb-lg-2">
+                                                <select class="form-select bg-none">
+                                                    <option>Tous</option>
+                                                    <option>Succès</option>
+                                                    <option>Échouée</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="dropdown d-inline-block">
+                                                    <a class="btn btn-link btn-square text-secondary dd-arrow-none dropdown-toggle no-caret" href="#" role="button" id="filterintitle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="true">
+                                                        <i class="bi bi-filter"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu width-300" aria-labelledby="filterintitle" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 42px);">
+                                                        <div class="dropdown-item">
+                                                            <div class="input-group input-group-md rounded" style="--mw-dynamic: calc(100% - 41px)">
+                                                                <span class="input-group-text text-theme"><i class="bi bi-box"></i></span>
+                                                                <select class="form-control choices" id="titltfilterlist" multiple="">
+                                                                    <option value="San Francisco">San Francisco</option>
+                                                                    <option value="New York">New York</option>
+                                                                    <option value="London">London</option>
+                                                                    <option value="Chicago" selected>Chicago</option>
+                                                                    <option value="Dapaong" selected="">Dapaong</option>
+                                                                    <option value="Sydney">Sydney</option>
+                                                                    <option value="Seattle">Seattle</option>
+                                                                    <option value="Los Angeles">Los Angeles</option>
+                                                                    <option value="Indonesia">Indonesia</option>
+                                                                    <option value="Los Angeles">Los Angeles</option>
+                                                                    <option value="Chicago">Chicago</option>
+                                                                    <option value="Dapaong">Dapaong</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="invalid-feedback">You have already selected maximum option allowed. (This is Configurable)</div>
+                                                        </div>
+                                                        <div class="dropdown-item">
+                                                            <h6 class="mb-0">Orders:</h6>
+                                                            <p class="text-secondary small">1256 orders last week</p>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush bg-none mb-2">
+                                                            <li class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="col">Online Orders</div>
+                                                                    <div class="col-auto">
+                                                                        <div class="form-check form-switch">
+                                                                            <input class="form-check-input" type="checkbox" role="switch" id="titleswitch1">
+                                                                            <label class="form-check-label" for="titleswitch1"></label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="col">Offline Orders</div>
+                                                                    <div class="col-auto">
+                                                                        <div class="form-check form-switch">
+                                                                            <input class="form-check-input" type="checkbox" role="switch" id="titleswitch2" checked="">
+                                                                            <label class="form-check-label" for="titleswitch2"></label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="dropdown-item">
+                                                            <div class="row">
+                                                                <div class="col"><button class="btn btn-outline-secondary border">cancel</button></div>
+                                                                <div class="col-auto">
+                                                                    <button class="btn btn-theme">Enregistrer</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <table class="table" id="dataTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>N° de facture</th>
+                                                    <th>Prix / Remise</th>
+                                                    <th>Client</th>
+                                                    <th>Pay mode</th>
+                                                    <th>Statut</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">25 March 2025</p>
+                                                        <p class="small text-secondary text-truncated">12:13:00 PM</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">#ODR115560</p>
+                                                        <p class="small text-secondary text-truncated">3 Items</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">65 FCFA </p>
+                                                        <p class="small text-secondary text-truncated">10 FCFA, <i class="bi bi-tag"></i> 8%</p>
+                                                    </td>
+                                                    <td>
+                                                        <div class="row gx-3 align-items-center flex-nowrap">
+                                                            <div class="col-auto">
+                                                                <div class="avatar avatar-50 rounded bg-theme-1-subtle text-theme-1 theme-blue">
+                                                                    <h5 class="fw-normal">RS</h5>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col maxwidth-200">
+                                                                <p class="mb-0 text-truncated">Selom Agbeko</p>
+                                                                <p class="small text-secondary">selom.agbeko@email.tg</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">Net Banking</p>
+                                                        <p class="small text-secondary">Prepaid</p>
+                                                    </td>
+                                                    <td>
+                                                        <span class="badge badge-light text-bg-success">Succès</span>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-square btn-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#view-invoice"><i class="bi bi-eye"></i></button>
+                                                        <button class="btn btn-square btn-link theme-blue"><i class="bi bi-pencil"></i></button>
+                                                        <button class="btn btn-square btn-link theme-red"><i class="bi bi-trash"></i></button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">15 March 2025</p>
+                                                        <p class="small text-secondary text-truncated">06:15:00 AM</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">#ODR1151231</p>
+                                                        <p class="small text-secondary text-truncated">2 Items</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">65 FCFA </p>
+                                                        <p class="small text-secondary text-truncated">10 FCFA, <i class="bi bi-tag"></i> 8%</p>
+                                                    </td>
+                                                    <td>
+                                                        <div class="row gx-3 align-items-center flex-nowrap">
+                                                            <div class="col-auto">
+                                                                <div class="avatar avatar-50 rounded bg-theme-1-subtle text-theme-1 theme-orange">
+                                                                    <h5 class="fw-normal">JF</h5>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col maxwidth-200">
+                                                                <p class="mb-0 text-truncated">Jan Franklin</p>
+                                                                <p class="small text-secondary">jan1579@testgmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">Cash</p>
+                                                        <p class="small text-secondary">Offline - Store</p>
+                                                    </td>
+                                                    <td>
+                                                        <span class="badge badge-light text-bg-danger">Échouée</span>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-square btn-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#view-invoice"><i class="bi bi-eye"></i></button>
+                                                        <button class="btn btn-square btn-link theme-blue"><i class="bi bi-pencil"></i></button>
+                                                        <button class="btn btn-square btn-link theme-red"><i class="bi bi-trash"></i></button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">14 March 2025</p>
+                                                        <p class="small text-secondary text-truncated">12:13:00 PM</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">
+                                                            <a href="gesco-facturation-detail.html" class="style-none theme-grey" data-bs-toggle="tooltip" title="Invoice Completed">
+                                                                <span class="p-1 bg-theme-1 rounded-circle align-middle d-inline-block"></span> #ODR115463
+                                                            </a>
+                                                        </p>
+                                                        <p class="small text-secondary text-truncated">5 Items</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">65 FCFA </p>
+                                                        <p class="small text-secondary text-truncated">12 FCFA, <i class="bi bi-tag"></i> 10%</p>
+                                                    </td>
+                                                    <td>
+                                                        <div class="row gx-3 align-items-center flex-nowrap">
+                                                            <div class="col-auto">
+                                                                <div class="avatar avatar-50 rounded bg-theme-1-subtle text-theme-1 theme-grey">
+                                                                    <h5 class="fw-normal">GW</h5>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col maxwidth-200">
+                                                                <p class="mb-0 text-truncated">Essi Bakou</p>
+                                                                <p class="small text-secondary">essi.bakou@email.tg</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">COD</p>
+                                                        <p class="small text-secondary">Cash on Delivery</p>
+                                                    </td>
+                                                    <td>
+                                                        <span class="badge badge-light text-bg-success">Succès</span>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-square btn-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#view-invoice"><i class="bi bi-eye"></i></button>
+                                                        <button class="btn btn-square btn-link theme-blue"><i class="bi bi-pencil"></i></button>
+                                                        <button class="btn btn-square btn-link theme-red"><i class="bi bi-trash"></i></button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">6 March 2025</p>
+                                                        <p class="small text-secondary text-truncated">1:13:00 AM</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">#ODR115743</p>
+                                                        <p class="small text-secondary text-truncated">1 Items</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">65 FCFA </p>
+                                                        <p class="small text-secondary text-truncated">10 FCFA, <i class="bi bi-tag"></i> 8%</p>
+                                                    </td>
+                                                    <td>
+                                                        <div class="row gx-3 align-items-center flex-nowrap">
+                                                            <div class="col-auto">
+                                                                <div class="avatar avatar-50 rounded bg-theme-1-subtle text-theme-1 theme-green">
+                                                                    <h5 class="fw-normal">CM</h5>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col maxwidth-200">
+                                                                <p class="mb-0 text-truncated">Akouvi Sossou</p>
+                                                                <p class="small text-secondary">akouvi.sossou@email.tg</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">Debit Card</p>
+                                                        <p class="small text-secondary">Prepaid</p>
+                                                    </td>
+                                                    <td>
+                                                        <span class="badge badge-light text-bg-success">Succès</span>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-square btn-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#view-invoice"><i class="bi bi-eye"></i></button>
+                                                        <button class="btn btn-square btn-link theme-blue"><i class="bi bi-pencil"></i></button>
+                                                        <button class="btn btn-square btn-link theme-red"><i class="bi bi-trash"></i></button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">4 March 2025</p>
+                                                        <p class="small text-secondary text-truncated">06:13:00 PM</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">#ODR115324</p>
+                                                        <p class="small text-secondary text-truncated">5 Items</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">65 FCFA </p>
+                                                        <p class="small text-secondary text-truncated">11 FCFA, <i class="bi bi-tag"></i> 9%</p>
+                                                    </td>
+                                                    <td>
+                                                        <div class="row gx-3 align-items-center flex-nowrap">
+                                                            <div class="col-auto">
+                                                                <div class="avatar avatar-50 rounded bg-theme-1-subtle text-theme-1 theme-cyan">
+                                                                    <h5 class="fw-normal">AH</h5>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col maxwidth-200">
+                                                                <p class="mb-0 text-truncated">Adjoa Nyamadi</p>
+                                                                <p class="small text-secondary">adjoa.nyamadi@email.tg</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">UPI</p>
+                                                        <p class="small text-secondary">Prepaid</p>
+                                                    </td>
+                                                    <td>
+                                                        <span class="badge badge-light text-bg-success">Succès</span>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-square btn-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#view-invoice"><i class="bi bi-eye"></i></button>
+                                                        <button class="btn btn-square btn-link theme-blue"><i class="bi bi-pencil"></i></button>
+                                                        <button class="btn btn-square btn-link theme-red"><i class="bi bi-trash"></i></button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">2 March 2025</p>
+                                                        <p class="small text-secondary text-truncated">04:13:00 PM</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">#ODR115352</p>
+                                                        <p class="small text-secondary text-truncated">3 Items</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">65 FCFA </p>
+                                                        <p class="small text-secondary text-truncated">8 FCFA, <i class="bi bi-tag"></i> 6%</p>
+                                                    </td>
+                                                    <td>
+                                                        <div class="row gx-3 align-items-center flex-nowrap">
+                                                            <div class="col-auto">
+                                                                <div class="avatar avatar-50 rounded bg-theme-1-subtle text-theme-1 theme-green">
+                                                                    <h5 class="fw-normal">BL</h5>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col maxwidth-200">
+                                                                <p class="mb-0 text-truncated">Mawusi Gbedemah</p>
+                                                                <p class="small text-secondary">mawusi.g@email.tg</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">Gift Card</p>
+                                                        <p class="small text-secondary">In-App</p>
+                                                    </td>
+                                                    <td>
+                                                        <span class="badge badge-light text-bg-danger">Échouée</span>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-square btn-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#view-invoice"><i class="bi bi-eye"></i></button>
+                                                        <button class="btn btn-square btn-link theme-blue"><i class="bi bi-pencil"></i></button>
+                                                        <button class="btn btn-square btn-link theme-red"><i class="bi bi-trash"></i></button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">8 Feb 2025</p>
+                                                        <p class="small text-secondary text-truncated">11:13:00 PM</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">
+                                                            <a href="gesco-facturation-detail.html" class="style-none theme-blue" data-bs-toggle="tooltip" title="Invoice Details">
+                                                                <span class="p-1 bg-theme-1 rounded-circle align-middle d-inline-block"></span> #ODR115753</a>
+                                                        </p>
+                                                        <p class="small text-secondary text-truncated">4 Items</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">65 FCFA </p>
+                                                        <p class="small text-secondary text-truncated">7 FCFA, <i class="bi bi-tag"></i> 5%</p>
+                                                    </td>
+                                                    <td>
+                                                        <div class="row gx-3 align-items-center flex-nowrap">
+                                                            <div class="col-auto">
+                                                                <div class="avatar avatar-50 rounded bg-theme-1-subtle text-theme-1 theme-blue">
+                                                                    <h5 class="fw-normal">AG</h5>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col maxwidth-200">
+                                                                <p class="mb-0 text-truncated">Afiwa Dogbe</p>
+                                                                <p class="small text-secondary">afiwa.dogbe@email.tg</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-truncated">Coupon</p>
+                                                        <p class="small text-secondary">In-App</p>
+                                                    </td>
+                                                    <td>
+                                                        <span class="badge badge-light text-bg-success">Succès</span>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-square btn-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#view-invoice"><i class="bi bi-eye"></i></button>
+                                                        <button class="btn btn-square btn-link theme-blue"><i class="bi bi-pencil"></i></button>
+                                                        <button class="btn btn-square btn-link theme-red"><i class="bi bi-trash"></i></button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                </div>
+                <!-- View Order details -->
+                <div class="offcanvas offcanvas-end shadow border-0 maxwidth-dynamic" tabindex="-1" id="view-invoice" data-bs-scroll="true" data-bs-backdrop="false" style="--mw-dynamic:650px; --bs-offcanvas-width:650px">
+                    <div class="offcanvas-header border-bottom">
+                        <div class="flex-grow-1">
+                            <button class="btn btn-link"><i class="bi bi-pencil"></i>Modifier</button>
+                            <button class="btn btn-link mx-1"><i class="bi bi-printer"></i> Print Invoice</button>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
+                    </div>
+                    <div class="small text-center px-2 py-1 bg-theme-1-subtle text-theme-1 theme-green">Payée</div>
+                    <div class="offcanvas-body">
+                        <!-- customer -->
+                        <div class="row gx-3 mb-3 mb-lg-4">
+                            <div class="col">
+                                <div class="row gx-3 flex-nowrap">
+                                    <div class="col-auto">
+                                        <div class="avatar avatar-50 rounded bg-theme-1-subtle text-theme-1 theme-blue">
+                                            <h5 class="fw-normal">RS</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="text-truncated mb-0">Selom Agbeko</h6>
+                                        <p class="small text-secondary mb-0">selom.agbeko@email.tg</p>
+                                        <p class="small text-secondary">1234 Main Apt., 4B Springfield, ST 54321</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto text-md-end">
+                                <h6 class="text-truncated mb-0">#ODR115753</h6>
+                                <p class="small text-secondary">N° de vente</p>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <!-- supplier and Shipping -->
+                        <div class="row">
+                            <div class="col-12 col-sm-6 mb-3 mb-lg-4">
+                                <h6 class="mb-3">Sold By:</h6>
+                                <p class="text-secondary mb-1">John Smith, 1234 Main Apt., 4B Springfield, <br> ST 54321</p>
+                                <p class="text-secondary">GSTIN: <b>07124AEIPJ54f5sd125</b></p>
+                            </div>
+                            <div class="col-12 col-sm-6 text-sm-end mb-3 mb-lg-4">
+                                <h6 class="mb-3">Shipping To:</h6>
+                                <p class="text-secondary">Test data 103909 Witamer CR, Niagara Falls, NY 14305,<br>Lomé</p>
+                            </div>
+                        </div>
+
+                        <!-- payment details -->
+                        <div class="row">
+                            <div class="col-12 col-sm-6 mb-3 mb-lg-4">
+                                <h6 class="mb-3">Order Date</h6>
+                                <p class="text-secondary mb-0">February 7, 2025</p>
+                                <p class="text-danger mb-0">Payment due April 21th, 2017</p>
+                                <p><span class="badge badge-light text-bg-success">Payée</span></p>
+                            </div>
+                            <div class="col-12 col-sm-6 text-sm-end mb-3 mb-lg-4">
+                                <h6 class="mb-3">Payment details</h6>
+                                <p class="text-secondary mb-0">Net Banking:</p>
+                                <p class="text-secondary">AmericaSpice Bank</p>
+                                <p class="text-secondary">A/C No.: 200525XXXXXX5524</p>
+                            </div>
+                        </div>
+
+                        <!-- order items-->
+                        <h6 class="mb-3">Order (7 Items)</h6>
+                        <ul class="list-group adminuiux-list-group mb-3 mb-lg-4">
+                            <li class="list-group-item px-2">
+                                <div class="row gx-3 align-items-center">
+                                    <div class="col-auto">
+                                        <figure class="avatar avatar-50 coverimg rounded">
+                                            <img src="assets/img/ecommerce/image-5.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="mb-0 text-truncated">Souris sans fil Logitech M185</p>
+                                        <p class="small text-secondary">ID: RT15246630</p>
+                                    </div>
+                                    <div class="col text-end">
+                                        <h6 class="mb-0">65 FCFA</h6>
+                                        <p class="small text-secondary">1 Item</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item px-2">
+                                <div class="row gx-3 align-items-center">
+                                    <div class="col-auto">
+                                        <figure class="avatar avatar-50 coverimg rounded">
+                                            <img src="assets/img/ecommerce/image-10.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="mb-0 text-truncated">SSD Kingston A400 480 Go</p>
+                                        <p class="small text-secondary">ID: RT152461850</p>
+                                    </div>
+                                    <div class="col text-end">
+                                        <h6 class="mb-0">55 FCFA</h6>
+                                        <p class="small text-secondary">1 Item</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item px-2">
+                                <div class="row gx-3 align-items-center">
+                                    <div class="col-auto">
+                                        <figure class="avatar avatar-50 coverimg rounded">
+                                            <img src="assets/img/ecommerce/image-8.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="mb-0 text-truncated">Onduleur 650VA Infosec</p>
+                                        <p class="small text-secondary">ID: RT15249630</p>
+                                    </div>
+                                    <div class="col text-end">
+                                        <h6 class="mb-0">48 FCFA</h6>
+                                        <p class="small text-secondary">3 Item</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item px-2">
+                                <div class="row gx-3 align-items-center">
+                                    <div class="col-auto">
+                                        <figure class="avatar avatar-50 coverimg rounded">
+                                            <img src="assets/img/ecommerce/image-9.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="mb-0 text-truncated">Câble réseau Cat6 20m</p>
+                                        <p class="small text-secondary">ID: RT15246745</p>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row gx-2 justify-content-center increamenter">
+                                            <div class="col-auto"><button class="btn btn-sm btn-square btn-theme rounded-circle increamenter-remove">-</button></div>
+                                            <div class="col-auto"><input type="number" class="form-control form-control-sm text-center width-50 increamenter-value" placeholder="" value="2"></div>
+                                            <div class="col-auto"><button class="btn btn-sm btn-square btn-theme rounded-circle increamenter-add">+</button></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto text-end">
+                                        <h6 class="mb-0">63 FCFA</h6>
+                                        <p class="small text-secondary">3 Item</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="offcanvas-footer p-3">
+                        <div class="row gx-3 align-items-center">
+                            <div class="col">
+                                <button class="btn btn-theme theme-blue"><i class="bi bi-patch-check"></i> Accept Order</button>
+                            </div>
+                            <div class="col-auto text-end">
+                                <h5 class="mb-1">261 FCFA</h5>
+                                <span class="badge badge-light text-bg-success">Succès</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                    <!-- ai-chat  -->
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="ai-chat" data-bs-scroll="true" data-bs-backdrop="false" style="--bs-offcanvas-width: 500px;">
+    <div class="offcanvas-header border-bottom">
+        <div class="flex-grow-1">
+            <h6 class="mb-0">AI Assistant</h6>
+            <p class="text-secondary small">Toujours actif</p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
+    </div>
+
+    <!-- Messages Body Container (matching ecommerce-ai.html layout) -->
+    <div class="offcanvas-body chat-list overflow-y-auto px-3" id="ai-offcanvas-messages-container">
+        <!-- Messages will be dynamically rendered here -->
+    </div>
+
+    <!-- Chat Input Area with Suggestions (matching ecommerce-ai.html layout) -->
+    <div class="offcanvas-footer border-top p-3 bg-light-opacity">
+        <div class="card adminuiux-card border-0 shadow-none bg-none mb-0">
+            <div class="card-header pb-0 bg-none border-0 px-0 pt-0">
+                <p class="small text-secondary mb-2">Tip: Select chips/tags (Preset) below to see preview different content.</p>
+                <!-- Suggestion Pills / Quick prompts -->
+                <div class="d-flex flex-wrap" id="ai-offcanvas-suggestions-bar">
+                    <!-- Suggestions will be dynamically rendered here -->
+                </div>
+            </div>
+            <div class="card-body px-0 pb-0 pt-2">
+                <textarea class="form-control bg-none mb-3" id="ai-offcanvas-input" placeholder="Type your message... " style="resize: none;" rows="1"></textarea>
+                <div class="row gx-3">
+                    <div class="col-auto"><button class="btn btn-square btn-link border"><i class="bi bi-emoji-smile"></i></button></div>
+                    <div class="col-auto"><button class="btn btn-square btn-link border"><i class="bi bi-paperclip"></i></button></div>
+                    <div class="col"></div>
+                    <div class="col-auto"><button class="btn btn-square btn-link border" type="button" id="ai-offcanvas-send-btn" onclick="handleOffcanvasSendMessage()"><i class="bi bi-send"></i></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Offcanvas Interactive Javascript -->
+<script src="assets/js/ecommerce/ecommerce-ai-chat.js"></script>
+
+                        <!-- footer -->
+                        <!-- standard footer -->
+<!-- include:footer -->
+<!-- Page Level js -->
+                                <script src="assets/js/ecommerce/ecommerce-billing.js"></script>
+
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/profile.js"></script>
+        <script src="assets/js/role-guard.js"></script>
+        <script src="assets/js/auth-guard.js"></script>
+</body>
+
+
+</html>

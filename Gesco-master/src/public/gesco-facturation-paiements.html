@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- dir="rtl"-->
+
+<head>
+    <!-- Required meta tags  -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="application-name" content="smartUIUX">
+    <meta name="apple-mobile-web-app-title" content="smartUIUX">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <link rel="apple-touch-icon" href="assets/img/logo-512.png">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>GESCO — Paiements & impayés | SOLUTECH</title>
+    
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --adminuiux-content-font: "Open Sans", serif;
+            --adminuiux-content-font-weight: 400;
+            --adminuiux-title-font: "Poppins", serif;
+            --adminuiux-title-font-weight: 600;
+        }
+    </style>
+<script defer src="assets/js/app13a2.js?5242d2f600103545528d"></script><link href="assets/css/app13a2.css?5242d2f600103545528d" rel="stylesheet"><link href="assets/css/solutech-theme.css" rel="stylesheet"><script>
+// Filet de sécurité : si l'écran de chargement ne se masque pas naturellement
+// (ex: police externe lente/bloquée sur réseau mobile), on le force à disparaître
+// après 2.5s pour ne jamais bloquer l'interface.
+setTimeout(function () {
+    var loader = document.querySelector('.pageloader');
+    if (loader && loader.style.display !== 'none') { loader.style.display = 'none'; }
+}, 2500);
+</script>
+</head>
+
+    <body class="main-bg main-bg-opac main-bg-blur roundedui adminuiux-header-standard adminuiux-sidebar-standard adminuiux-mobile-footer-fill-theme adminuiux-header-transparent adminuiux-sidebar-fill-none scrollup" data-theme="light" data-sidebarfill="adminuiux-sidebar-fill-none" data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" tabindex="0" data-sidebarlayout="adminuiux-sidebar-standard"
+        data-headerlayout="adminuiux-header-standard" data-headerfill="adminuiux-header-transparent" data-bggradient="bg-r-gradient" style="">
+        <!-- Pageloader -->
+<div class="pageloader">
+    <div class="container h-100">
+        <div class="row justify-content-center align-items-center text-center h-100 pb-ios">
+            <div class="col-12 mb-auto pt-4"></div>
+            <div class="col-auto">
+                <img src="assets/img/logo.svg" alt="" class="height-80 mb-3">
+                <p class="h2 mb-0 text-theme-accent-1">SOLUTECH</p>
+                <p class="display-3 text-theme-1 fw-bold mb-4">GESCO</p>
+                <div class="loader12 mb-2 mx-auto"></div>
+            </div>
+            <div class="col-12 mt-auto pb-4">
+                <p class="small text-secondary">Veuillez patienter, préparation en cours...</p>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- standard header -->
+<!-- include:header -->
+
+<!-- include:search-modal -->
+                <div class="adminuiux-wrap">
+                    <!-- Standard sidebar -->
+                    <!-- Standard sidebar -->
+<!-- include:sidebar -->
+                        <main class="adminuiux-content has-sidebar" onclick="contentClick()">
+    <div class="container-fluid mt-3">
+        <div class="row gx-1 align-items-center mb-3">
+            <div class="col">
+                <nav aria-label="breadcrumb" class="mb-1">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="gesco-dashboard.html"><i class="bi bi-house-door"></i> Accueil</a></li>
+                        <li class="breadcrumb-item">Facturation</li><li class="breadcrumb-item active" aria-current="page">Paiements</li>
+                    </ol>
+                </nav>
+                <h4 class="mb-0">Paiements & impayés</h4>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-theme" type="button" id="btn-nouveau-paiement"><i class="bi bi-plus-lg"></i> Enregistrer un paiement</button>
+            </div>
+        </div>
+
+        <div class="row g-3 mb-4">
+            <div class="col-6 col-lg-3">
+                <div class="card adminuiux-card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="avatar avatar-40 rounded bg-theme-1-subtle text-theme-1 d-flex align-items-center justify-content-center"><i class="bi bi-cash-coin"></i></span>
+                            <div>
+                                <h6 class="mb-0">Encaissé</h6>
+                                <p class="small text-secondary mb-0" id="stat-periode">Ce mois</p>
+                            </div>
+                        </div>
+                        <h3 class="mb-0" id="stat-encaisse">—</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="card adminuiux-card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="avatar avatar-40 rounded bg-theme-1-subtle text-theme-1 d-flex align-items-center justify-content-center"><i class="bi bi-credit-card"></i></span>
+                            <div>
+                                <h6 class="mb-0">Paiements</h6>
+                                <p class="small text-secondary mb-0" id="stat-paiements-detail">Ce mois</p>
+                            </div>
+                        </div>
+                        <h3 class="mb-0" id="stat-paiements">—</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="card adminuiux-card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="avatar avatar-40 rounded text-danger d-flex align-items-center justify-content-center" style="background:color-mix(in oklab, var(--bs-danger) 12%, transparent);"><i class="bi bi-exclamation-triangle"></i></span>
+                            <div>
+                                <h6 class="mb-0">Total impayé</h6>
+                                <p class="small text-secondary mb-0" id="stat-impayes-detail">—</p>
+                            </div>
+                        </div>
+                        <h3 class="mb-0 text-danger" id="stat-impayes">—</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="card adminuiux-card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="avatar avatar-40 rounded text-danger d-flex align-items-center justify-content-center" style="background:color-mix(in oklab, var(--bs-danger) 12%, transparent);"><i class="bi bi-clock-history"></i></span>
+                            <div>
+                                <h6 class="mb-0">En retard</h6>
+                                <p class="small text-secondary mb-0" id="stat-retard-detail">Échéance dépassée</p>
+                            </div>
+                        </div>
+                        <h3 class="mb-0 text-danger" id="stat-retard">—</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card adminuiux-card border-0 shadow-sm">
+            <div class="card-body">
+                <div class="row gx-3 align-items-center mb-3">
+                    <div class="col">
+                        <h6 class="mb-0">Paiements reçus</h6>
+                        <p class="small text-secondary mb-0">Historique des règlements enregistrés</p>
+                    </div>
+                    <div class="col-auto">
+                        <div class="input-group">
+                            <span class="input-group-text bg-none"><i class="bi bi-search"></i></span>
+                            <input type="search" id="paiements-recherche" class="form-control" placeholder="N° paiement, facture, client..." aria-label="Rechercher un paiement">
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <select class="form-select" id="paiements-mode" aria-label="Filtrer par mode de paiement">
+                            <option value="">Tous les modes</option>
+                            <option value="especes">Espèces</option>
+                            <option value="mobile_money">Mobile Money</option>
+                            <option value="carte">Carte</option>
+                            <option value="virement">Virement</option>
+                            <option value="cheque">Chèque</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table adminuiux-table align-middle">
+                        <thead><tr><th>Référence</th><th>Date</th><th>Facture</th><th>Client</th><th class="text-end">Montant</th><th>Mode</th><th>Enregistré par</th><th class="text-end">Action</th></tr></thead>
+                        <tbody id="paiements-corps">
+                            <tr>
+                                <td colspan="8" class="text-center py-5">
+                                    <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Chargement des paiements...</span></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row gx-3 align-items-center mt-3">
+                    <div class="col"><p class="small text-secondary mb-0" id="paiements-compteur"></p></div>
+                </div>
+
+                <h6 class="mb-1 mt-4">Impayés à relancer</h6>
+                <p class="small text-secondary mb-3">Factures émises dont le solde n'est pas encore soldé</p>
+                <div class="table-responsive">
+                    <table class="table adminuiux-table align-middle">
+                        <thead><tr>
+                            <th>Facture</th><th>Client</th><th class="text-end">Solde dû</th><th>Échéance</th><th>Retard</th><th class="text-end">Action</th>
+                        </tr></thead>
+                        <tbody id="impayes-corps">
+                            <tr>
+                                <td colspan="6" class="text-center py-4">
+                                    <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Chargement des impayés...</span></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row gx-3 align-items-center mt-3">
+                    <div class="col"><p class="small text-secondary mb-0" id="impayes-compteur"></p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Modal d'encaissement -->
+<div class="modal fade" id="paiementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-4">
+            <div class="modal-header border-bottom">
+                <div>
+                    <h5 class="modal-title mb-0">Enregistrer un paiement</h5>
+                    <p class="small text-secondary mb-0" id="paiement-sous-titre">Sélectionnez la facture concernée</p>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger d-none" id="paiement-alerte" role="alert"></div>
+                <div class="mb-3">
+                    <label class="form-label" for="paiement-facture">Facture concernée <span class="text-danger">*</span></label>
+                    <select class="form-select" id="paiement-facture" required>
+                        <option value="">Chargement des factures...</option>
+                    </select>
+                    <p class="small text-secondary mb-0 mt-1 d-none" id="paiement-solde-aide"></p>
+                </div>
+                <div class="row gx-3">
+                    <div class="col-12 col-md-6 mb-3">
+                        <label class="form-label" for="paiement-montant">Montant <span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <input type="number" min="0" step="0.01" class="form-control" id="paiement-montant" placeholder="0">
+                            <span class="input-group-text">FCFA</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+                        <label class="form-label" for="paiement-mode">Mode de paiement <span class="text-danger">*</span></label>
+                        <select class="form-select" id="paiement-mode">
+                            <option value="especes">Espèces</option>
+                            <option value="mobile_money">Mobile Money</option>
+                            <option value="carte">Carte bancaire</option>
+                            <option value="virement">Virement</option>
+                            <option value="cheque">Chèque</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-0">
+                    <label class="form-label" for="paiement-notes">Note</label>
+                    <input type="text" class="form-control" id="paiement-notes" placeholder="Référence du chèque, commentaire...">
+                </div>
+            </div>
+            <div class="modal-footer border-top">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-theme" id="paiement-enregistrer">Enregistrer le paiement</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal d'annulation (contrepassation) -->
+<div class="modal fade" id="annulationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-4">
+            <div class="modal-header border-bottom">
+                <div>
+                    <h5 class="modal-title mb-0">Annuler un paiement</h5>
+                    <p class="small text-secondary mb-0" id="annulation-sous-titre"></p>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger d-none" id="annulation-alerte" role="alert"></div>
+                <div class="alert alert-warning small" role="alert">
+                    <i class="bi bi-info-circle"></i> Le paiement n'est pas supprimé : une contre-écriture négative sera enregistrée pour préserver l'historique comptable.
+                </div>
+                <label class="form-label" for="annulation-motif">Motif de l'annulation <span class="text-danger">*</span></label>
+                <textarea class="form-control" id="annulation-motif" rows="3" placeholder="Ex. encaissement erroné, chèque impayé..."></textarea>
+            </div>
+            <div class="modal-footer border-top">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-danger" id="annulation-confirmer">Confirmer l'annulation</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de relance -->
+<div class="modal fade" id="relanceModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-4">
+            <div class="modal-header border-bottom">
+                <div>
+                    <h5 class="modal-title mb-0">Relancer un client</h5>
+                    <p class="small text-secondary mb-0" id="relance-sous-titre"></p>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger d-none" id="relance-alerte" role="alert"></div>
+                <p class="small text-secondary">Un e-mail de rappel sera envoyé à l'adresse du client avec le solde restant dû.</p>
+                <label class="form-label" for="relance-message">Message complémentaire (facultatif)</label>
+                <textarea class="form-control" id="relance-message" rows="3" placeholder="Ex. Nous vous remercions de régulariser sous 8 jours..."></textarea>
+            </div>
+            <div class="modal-footer border-top">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-theme" id="relance-envoyer"><i class="bi bi-send"></i> Envoyer la relance</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+                <!-- View Order details -->
+                <div class="offcanvas offcanvas-end shadow border-0 maxwidth-dynamic" tabindex="-1" id="view-invoice" data-bs-scroll="true" data-bs-backdrop="false" style="--mw-dynamic:650px; --bs-offcanvas-width:650px">
+                    <div class="offcanvas-header border-bottom">
+                        <div class="flex-grow-1">
+                            <button class="btn btn-link"><i class="bi bi-pencil"></i>Modifier</button>
+                            <button class="btn btn-link mx-1"><i class="bi bi-printer"></i> Print Invoice</button>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
+                    </div>
+                    <div class="small text-center px-2 py-1 bg-theme-1-subtle text-theme-1 theme-green">Payée</div>
+                    <div class="offcanvas-body">
+                        <!-- customer -->
+                        <div class="row gx-3 mb-3 mb-lg-4">
+                            <div class="col">
+                                <div class="row gx-3 flex-nowrap">
+                                    <div class="col-auto">
+                                        <div class="avatar avatar-50 rounded bg-theme-1-subtle text-theme-1 theme-blue">
+                                            <h5 class="fw-normal">RS</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="text-truncated mb-0">Selom Agbeko</h6>
+                                        <p class="small text-secondary mb-0">selom.agbeko@email.tg</p>
+                                        <p class="small text-secondary">1234 Main Apt., 4B Springfield, ST 54321</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto text-md-end">
+                                <h6 class="text-truncated mb-0">#ODR115753</h6>
+                                <p class="small text-secondary">N° de vente</p>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <!-- supplier and Shipping -->
+                        <div class="row">
+                            <div class="col-12 col-sm-6 mb-3 mb-lg-4">
+                                <h6 class="mb-3">Sold By:</h6>
+                                <p class="text-secondary mb-1">John Smith, 1234 Main Apt., 4B Springfield, <br> ST 54321</p>
+                                <p class="text-secondary">GSTIN: <b>07124AEIPJ54f5sd125</b></p>
+                            </div>
+                            <div class="col-12 col-sm-6 text-sm-end mb-3 mb-lg-4">
+                                <h6 class="mb-3">Shipping To:</h6>
+                                <p class="text-secondary">Test data 103909 Witamer CR, Niagara Falls, NY 14305,<br>Lomé</p>
+                            </div>
+                        </div>
+
+                        <!-- payment details -->
+                        <div class="row">
+                            <div class="col-12 col-sm-6 mb-3 mb-lg-4">
+                                <h6 class="mb-3">Order Date</h6>
+                                <p class="text-secondary mb-0">February 7, 2025</p>
+                                <p class="text-danger mb-0">Payment due April 21th, 2017</p>
+                                <p><span class="badge badge-light text-bg-success">Payée</span></p>
+                            </div>
+                            <div class="col-12 col-sm-6 text-sm-end mb-3 mb-lg-4">
+                                <h6 class="mb-3">Payment details</h6>
+                                <p class="text-secondary mb-0">Net Banking:</p>
+                                <p class="text-secondary">AmericaSpice Bank</p>
+                                <p class="text-secondary">A/C No.: 200525XXXXXX5524</p>
+                            </div>
+                        </div>
+
+                        <!-- order items-->
+                        <h6 class="mb-3">Order (7 Items)</h6>
+                        <ul class="list-group adminuiux-list-group mb-3 mb-lg-4">
+                            <li class="list-group-item px-2">
+                                <div class="row gx-3 align-items-center">
+                                    <div class="col-auto">
+                                        <figure class="avatar avatar-50 coverimg rounded">
+                                            <img src="assets/img/ecommerce/image-5.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="mb-0 text-truncated">Souris sans fil Logitech M185</p>
+                                        <p class="small text-secondary">ID: RT15246630</p>
+                                    </div>
+                                    <div class="col text-end">
+                                        <h6 class="mb-0">65 FCFA</h6>
+                                        <p class="small text-secondary">1 Item</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item px-2">
+                                <div class="row gx-3 align-items-center">
+                                    <div class="col-auto">
+                                        <figure class="avatar avatar-50 coverimg rounded">
+                                            <img src="assets/img/ecommerce/image-10.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="mb-0 text-truncated">SSD Kingston A400 480 Go</p>
+                                        <p class="small text-secondary">ID: RT152461850</p>
+                                    </div>
+                                    <div class="col text-end">
+                                        <h6 class="mb-0">55 FCFA</h6>
+                                        <p class="small text-secondary">1 Item</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item px-2">
+                                <div class="row gx-3 align-items-center">
+                                    <div class="col-auto">
+                                        <figure class="avatar avatar-50 coverimg rounded">
+                                            <img src="assets/img/ecommerce/image-8.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="mb-0 text-truncated">Onduleur 650VA Infosec</p>
+                                        <p class="small text-secondary">ID: RT15249630</p>
+                                    </div>
+                                    <div class="col text-end">
+                                        <h6 class="mb-0">48 FCFA</h6>
+                                        <p class="small text-secondary">3 Item</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item px-2">
+                                <div class="row gx-3 align-items-center">
+                                    <div class="col-auto">
+                                        <figure class="avatar avatar-50 coverimg rounded">
+                                            <img src="assets/img/ecommerce/image-9.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="mb-0 text-truncated">Câble réseau Cat6 20m</p>
+                                        <p class="small text-secondary">ID: RT15246745</p>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row gx-2 justify-content-center increamenter">
+                                            <div class="col-auto"><button class="btn btn-sm btn-square btn-theme rounded-circle increamenter-remove">-</button></div>
+                                            <div class="col-auto"><input type="number" class="form-control form-control-sm text-center width-50 increamenter-value" placeholder="" value="2"></div>
+                                            <div class="col-auto"><button class="btn btn-sm btn-square btn-theme rounded-circle increamenter-add">+</button></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto text-end">
+                                        <h6 class="mb-0">63 FCFA</h6>
+                                        <p class="small text-secondary">3 Item</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="offcanvas-footer p-3">
+                        <div class="row gx-3 align-items-center">
+                            <div class="col">
+                                <button class="btn btn-theme theme-blue"><i class="bi bi-patch-check"></i> Accept Order</button>
+                            </div>
+                            <div class="col-auto text-end">
+                                <h5 class="mb-1">261 FCFA</h5>
+                                <span class="badge badge-light text-bg-success">Succès</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                    <!-- ai-chat  -->
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="ai-chat" data-bs-scroll="true" data-bs-backdrop="false" style="--bs-offcanvas-width: 500px;">
+    <div class="offcanvas-header border-bottom">
+        <div class="flex-grow-1">
+            <h6 class="mb-0">AI Assistant</h6>
+            <p class="text-secondary small">Toujours actif</p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
+    </div>
+
+    <!-- Messages Body Container (matching ecommerce-ai.html layout) -->
+    <div class="offcanvas-body chat-list overflow-y-auto px-3" id="ai-offcanvas-messages-container">
+        <!-- Messages will be dynamically rendered here -->
+    </div>
+
+    <!-- Chat Input Area with Suggestions (matching ecommerce-ai.html layout) -->
+    <div class="offcanvas-footer border-top p-3 bg-light-opacity">
+        <div class="card adminuiux-card border-0 shadow-none bg-none mb-0">
+            <div class="card-header pb-0 bg-none border-0 px-0 pt-0">
+                <p class="small text-secondary mb-2">Tip: Select chips/tags (Preset) below to see preview different content.</p>
+                <!-- Suggestion Pills / Quick prompts -->
+                <div class="d-flex flex-wrap" id="ai-offcanvas-suggestions-bar">
+                    <!-- Suggestions will be dynamically rendered here -->
+                </div>
+            </div>
+            <div class="card-body px-0 pb-0 pt-2">
+                <textarea class="form-control bg-none mb-3" id="ai-offcanvas-input" placeholder="Type your message... " style="resize: none;" rows="1"></textarea>
+                <div class="row gx-3">
+                    <div class="col-auto"><button class="btn btn-square btn-link border"><i class="bi bi-emoji-smile"></i></button></div>
+                    <div class="col-auto"><button class="btn btn-square btn-link border"><i class="bi bi-paperclip"></i></button></div>
+                    <div class="col"></div>
+                    <div class="col-auto"><button class="btn btn-square btn-link border" type="button" id="ai-offcanvas-send-btn" onclick="handleOffcanvasSendMessage()"><i class="bi bi-send"></i></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Offcanvas Interactive Javascript -->
+<script src="assets/js/ecommerce/ecommerce-ai-chat.js"></script>
+
+                        <!-- footer -->
+                        <!-- standard footer -->
+<!-- include:footer -->
+<!-- Page Level js -->
+
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/paiements.js"></script>
+    <script src="assets/js/profile.js"></script>
+        <script src="assets/js/role-guard.js"></script>
+        <script src="assets/js/auth-guard.js"></script>
+</body>
+
+
+</html>

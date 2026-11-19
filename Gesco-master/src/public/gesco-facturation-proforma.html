@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!-- dir="rtl"-->
+
+<head>
+    <!-- Required meta tags  -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="application-name" content="smartUIUX">
+    <meta name="apple-mobile-web-app-title" content="smartUIUX">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <link rel="apple-touch-icon" href="assets/img/logo-512.png">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>GESCO — Nouvelle facture proforma | SOLUTECH</title>
+    <meta name="description" content="Création d'une Facture proforma dans GESCO.">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --adminuiux-content-font: "Open Sans", serif;
+            --adminuiux-content-font-weight: 400;
+            --adminuiux-title-font: "Poppins", serif;
+            --adminuiux-title-font-weight: 600;
+        }
+    </style>
+<script defer src="assets/js/app13a2.js?5242d2f600103545528d"></script><link href="assets/css/app13a2.css?5242d2f600103545528d" rel="stylesheet"><link href="assets/css/solutech-theme.css" rel="stylesheet"><script>
+// Filet de sécurité : si l'écran de chargement ne se masque pas naturellement
+// (ex: police externe lente/bloquée sur réseau mobile), on le force à disparaître
+// après 2.5s pour ne jamais bloquer l'interface.
+setTimeout(function () {
+    var loader = document.querySelector('.pageloader');
+    if (loader && loader.style.display !== 'none') { loader.style.display = 'none'; }
+}, 2500);
+</script>
+</head>
+
+    <body class="main-bg main-bg-opac main-bg-blur roundedui adminuiux-header-standard adminuiux-sidebar-standard adminuiux-mobile-footer-fill-theme adminuiux-header-transparent adminuiux-sidebar-fill-none scrollup" data-theme="light" data-sidebarfill="adminuiux-sidebar-fill-none" data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" tabindex="0" data-sidebarlayout="adminuiux-sidebar-standard"
+        data-headerlayout="adminuiux-header-standard" data-headerfill="adminuiux-header-transparent" data-bggradient="bg-r-gradient" style="">
+        <!-- Pageloader -->
+<div class="pageloader">
+    <div class="container h-100">
+        <div class="row justify-content-center align-items-center text-center h-100 pb-ios">
+            <div class="col-12 mb-auto pt-4"></div>
+            <div class="col-auto">
+                <img src="assets/img/logo.svg" alt="" class="height-80 mb-3">
+                <p class="h2 mb-0 text-theme-accent-1">SOLUTECH</p>
+                <p class="display-3 text-theme-1 fw-bold mb-4">GESCO</p>
+                <div class="loader12 mb-2 mx-auto"></div>
+            </div>
+            <div class="col-12 mt-auto pb-4">
+                <p class="small text-secondary">Veuillez patienter, préparation en cours...</p>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- standard header -->
+<!-- include:header -->
+
+<!-- include:search-modal -->
+                <div class="adminuiux-wrap">
+                    <!-- Standard sidebar -->
+                    <!-- Standard sidebar -->
+<!-- include:sidebar -->
+                        <main class="adminuiux-content has-sidebar">
+    <div class="container-fluid mt-3">
+        <div class="row gx-1 align-items-center mb-3">
+            <div class="col col-sm mb-3 mb-md-0">
+                <nav aria-label="breadcrumb" class="mb-1">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="gesco-dashboard.html"><i class="bi bi-house-door"></i> Accueil</a></li>
+                        <li class="breadcrumb-item"><a href="gesco-facturation-proformas.html">Factures proforma</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Nouvelle proforma</li>
+                    </ol>
+                </nav>
+                <h4 class="mb-0">Nouvelle facture proforma</h4>
+            </div>
+            <div class="col-auto">
+                <a href="gesco-facturation-proformas.html" class="btn btn-outline-secondary">
+                    <i class="bi bi-list-ul"></i> Liste des proformas
+                </a>
+            </div>
+        </div>
+
+        <form id="pf-form" novalidate>
+            <div class="row g-3">
+                <div class="col-lg-8">
+                    <div class="card adminuiux-card border-0 shadow-sm mb-3 pf-sheet">
+                        <div class="card-body p-4">
+                            <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 border-bottom pb-3 mb-3">
+                                <div>
+                                    <div class="pf-doc-label small text-uppercase text-secondary">Facture proforma</div>
+                                    <h5 class="mb-1">Nouveau document</h5>
+                                    <div class="small text-secondary">Le numéro sera généré automatiquement à l'enregistrement.</div>
+                                </div>
+                                <div class="text-end">
+                                    <label class="form-label small text-secondary mb-1" for="pf-date">Date</label>
+                                    <input type="date" class="form-control" id="pf-date" required>
+                                </div>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-8">
+                                    <label class="form-label small text-secondary mb-1" for="pf-client">Client</label>
+                                    <div class="input-group">
+                                        <select class="form-select" id="pf-client" required>
+                                            <option value="">Sélectionner un client</option>
+                                        </select>
+                                        <button class="btn btn-outline-secondary" type="button" id="pf-add-client" title="Ajouter un nouveau client">
+                                            <i class="bi bi-person-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label small text-secondary mb-1" for="pf-validity">Validité</label>
+                                    <input type="text" class="form-control" id="pf-validity" placeholder="Ex : 30 jours">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small text-secondary mb-1" for="pf-section-title">Objet / titre de la section</label>
+                                    <input type="text" class="form-control" id="pf-section-title" value="PROPOSITION COMMERCIALE" placeholder="Ex : Fournitures des équipements informatiques">
+                                </div>
+                            </div>
+
+                            <div class="alert alert-danger d-none mt-3 mb-0" id="pf-error" role="alert"></div>
+                        </div>
+                    </div>
+
+                    <div class="card adminuiux-card border-0 shadow-sm mb-3">
+                        <div class="card-body p-3 p-md-4">
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-3">
+                                <h6 class="mb-0">Articles</h6>
+                                <button type="button" class="btn btn-sm btn-theme" id="pf-add-line">
+                                    <i class="bi bi-plus-lg"></i> Ajouter une ligne
+                                </button>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table align-middle pf-lines-table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th style="min-width:180px">Désignation</th>
+                                            <th style="min-width:180px">Description</th>
+                                            <th class="text-end" style="min-width:80px">Qté</th>
+                                            <th class="text-end" style="min-width:120px">Prix unitaire</th>
+                                            <th class="text-end" style="min-width:110px">Remise</th>
+                                            <th class="text-end" style="min-width:110px">Total</th>
+                                            <th style="width:44px"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="pf-lines-body"></tbody>
+                                </table>
+                            </div>
+                            <p class="small text-secondary mt-3 mb-0">
+                                <i class="bi bi-info-circle"></i> Lignes libres uniquement : aucun produit du catalogue n'est requis et le stock n'est pas modifié.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card adminuiux-card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h6 class="mb-3">Informations complémentaires</h6>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small text-secondary mb-1" for="pf-delivery-time">Délai de livraison</label>
+                                    <input type="text" class="form-control" id="pf-delivery-time" placeholder="Ex : 7 jours">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small text-secondary mb-1" for="pf-guarantee">Garantie</label>
+                                    <input type="text" class="form-control" id="pf-guarantee" placeholder="Ex : 1 an">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small text-secondary mb-1" for="pf-payment-condition">Condition de paiement</label>
+                                    <input type="text" class="form-control" id="pf-payment-condition" value="60% à l'accord et 40% à la livraison">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small text-secondary mb-1" for="pf-notes">Notes</label>
+                                    <textarea class="form-control" id="pf-notes" rows="3" placeholder="Informations visibles sur le document…"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card adminuiux-card border-0 shadow-sm pf-summary">
+                        <div class="card-body p-4">
+                            <h6 class="mb-3">Récapitulatif</h6>
+                            <div class="d-flex justify-content-between small mb-2">
+                                <span class="text-secondary">Sous-total</span>
+                                <span id="pf-subtotal">0 FCFA</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center small mb-2">
+                                <div class="form-check form-switch mb-0">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="pf-apply-tax" checked>
+                                    <label class="form-check-label text-secondary" for="pf-apply-tax" id="pf-tax-label">TVA</label>
+                                </div>
+                                <span id="pf-tax">0 FCFA</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <span class="fw-bold">Total TTC</span>
+                                <span class="fw-bold fs-4" id="pf-total">0 FCFA</span>
+                            </div>
+                            <button type="submit" class="btn btn-theme btn-lg w-100" id="pf-save">
+                                <i class="bi bi-file-earmark-check"></i> Enregistrer la proforma
+                            </button>
+                            <p class="small text-secondary text-center mt-2 mb-0" id="pf-status" aria-live="polite"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+
+<!-- Création rapide d'un client -->
+<div class="modal fade" id="pf-client-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <form id="pf-client-form">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-person-plus"></i> Nouveau client</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger d-none" id="pf-client-error" role="alert"></div>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label small text-secondary mb-1" for="pf-client-type">Type de client</label>
+                            <select class="form-select" id="pf-client-type">
+                                <option value="particulier" selected>Particulier</option>
+                                <option value="entreprise">Entreprise</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small text-secondary mb-1" for="pf-client-nom">Nom complet / Raison sociale</label>
+                            <input type="text" class="form-control" id="pf-client-nom" placeholder="Ex : Ets Kponou" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small text-secondary mb-1" for="pf-client-nif">NIF (si entreprise)</label>
+                            <input type="text" class="form-control" id="pf-client-nif" placeholder="Optionnel">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small text-secondary mb-1" for="pf-client-telephone">Téléphone</label>
+                            <input type="text" class="form-control" id="pf-client-telephone" placeholder="90 00 00 00">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small text-secondary mb-1" for="pf-client-email">Email</label>
+                            <input type="email" class="form-control" id="pf-client-email" placeholder="client@email.tg">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small text-secondary mb-1" for="pf-client-ville">Ville</label>
+                            <input type="text" class="form-control" id="pf-client-ville" placeholder="Lomé">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small text-secondary mb-1" for="pf-client-adresse">Adresse</label>
+                            <input type="text" class="form-control" id="pf-client-adresse" placeholder="Quartier, rue...">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-theme" id="pf-client-submit">Créer le client</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    <!-- include:footer-compact -->
+
+    <style>
+.pf-sheet { background: #ffffff; }
+.pf-doc-label { letter-spacing: .12em; }
+.pf-lines-table th { font-size: .75rem; text-transform: uppercase; letter-spacing: .04em; color: #64748b; white-space: nowrap; }
+.pf-lines-table td { vertical-align: middle; }
+.pf-lines-table .form-control { min-width: 90px; }
+.pf-summary { position: sticky; top: 1rem; }
+@media (max-width: 575.98px) { .pf-lines-table { min-width: 760px; } }
+</style>
+
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/profile.js"></script>
+    <script src="assets/js/role-guard.js"></script>
+    <script src="assets/js/auth-guard.js"></script>
+    <script src="assets/js/invoice/proforma-editor.js"></script>
+</body>
+</html>

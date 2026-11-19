@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- dir="rtl"-->
+
+<head>
+    <!-- Required meta tags  -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="application-name" content="smartUIUX">
+    <meta name="apple-mobile-web-app-title" content="smartUIUX">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <link rel="apple-touch-icon" href="assets/img/logo-512.png">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>GESCO — Détail de la vente | SOLUTECH</title>
+    
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --adminuiux-content-font: "Open Sans", serif;
+            --adminuiux-content-font-weight: 400;
+            --adminuiux-title-font: "Poppins", serif;
+            --adminuiux-title-font-weight: 600;
+        }
+    </style>
+<script defer src="assets/js/app13a2.js?5242d2f600103545528d"></script><link href="assets/css/app13a2.css?5242d2f600103545528d" rel="stylesheet"><link href="assets/css/solutech-theme.css" rel="stylesheet"><script>
+// Filet de sécurité : si l'écran de chargement ne se masque pas naturellement
+// (ex: police externe lente/bloquée sur réseau mobile), on le force à disparaître
+// après 2.5s pour ne jamais bloquer l'interface.
+setTimeout(function () {
+    var loader = document.querySelector('.pageloader');
+    if (loader && loader.style.display !== 'none') { loader.style.display = 'none'; }
+}, 2500);
+</script>
+</head>
+
+    <body class="main-bg main-bg-opac main-bg-blur roundedui adminuiux-header-standard adminuiux-sidebar-standard adminuiux-mobile-footer-fill-theme adminuiux-header-transparent adminuiux-sidebar-fill-none scrollup" data-theme="light" data-sidebarfill="adminuiux-sidebar-fill-none" data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" tabindex="0" data-sidebarlayout="adminuiux-sidebar-standard"
+        data-headerlayout="adminuiux-header-standard" data-headerfill="adminuiux-header-transparent" data-bggradient="bg-r-gradient" style="">
+        <!-- Pageloader -->
+<div class="pageloader">
+    <div class="container h-100">
+        <div class="row justify-content-center align-items-center text-center h-100 pb-ios">
+            <div class="col-12 mb-auto pt-4"></div>
+            <div class="col-auto">
+                <img src="assets/img/logo.svg" alt="" class="height-80 mb-3">
+                <p class="h2 mb-0 text-theme-accent-1">SOLUTECH</p>
+                <p class="display-3 text-theme-1 fw-bold mb-4">GESCO</p>
+                <div class="loader12 mb-2 mx-auto"></div>
+            </div>
+            <div class="col-12 mt-auto pb-4">
+                <p class="small text-secondary">Veuillez patienter, préparation en cours...</p>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- standard header -->
+<!-- include:header -->
+
+<!-- include:search-modal -->
+                <div class="adminuiux-wrap">
+                    <!-- Standard sidebar -->
+                    <!-- Standard sidebar -->
+<!-- include:sidebar -->
+                        <main class="adminuiux-content has-sidebar" onclick="contentClick()">
+    <div class="container-fluid mt-3">
+        <div class="row gx-1 align-items-center mb-3">
+            <div class="col">
+                <nav aria-label="breadcrumb" class="mb-1">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="gesco-dashboard.html"><i class="bi bi-house-door"></i> Accueil</a></li>
+                        <li class="breadcrumb-item"><a href="gesco-ventes.html">Ventes</a></li><li class="breadcrumb-item active" aria-current="page">V-3392</li>
+                    </ol>
+                </nav>
+                <h4 class="mb-0">Vente V-3392</h4>
+            </div>
+            <div class="col-auto d-flex gap-2 flex-wrap">
+                <a href="gesco-facturation-detail.html" class="btn btn-outline-secondary" id="btn-voir-facture"><i class="bi bi-file-earmark-text"></i> Voir la facture</a>
+                <button type="button" class="btn btn-outline-secondary" id="btn-generer-livraison"><i class="bi bi-truck"></i> Générer son bon de livraison</button>
+                <button class="btn btn-outline-danger" id="btn-annuler-vente"><i class="bi bi-x-circle"></i> Annuler la vente</button>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card adminuiux-card border-0 shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-4">
+                            <div>
+                                <h6 class="mb-1">Articles vendus</h6>
+                                <p class="small text-secondary mb-0">—</p>
+                            </div>
+                            <span class="badge badge-light text-bg-success">Validée</span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table adminuiux-table align-middle mb-0">
+                                <thead><tr><th>Produit</th><th class="text-center">Qté</th><th class="text-end">Prix unitaire</th><th class="text-end">Montant</th></tr></thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between small mb-1"><span class="text-secondary">Sous-total</span><span>—</span></div>
+                        <div class="d-flex justify-content-between small mb-1"><span class="text-secondary">Remise</span><span>—</span></div>
+                        <div class="d-flex justify-content-between small mb-2"><span class="text-secondary">TVA</span><span>—</span></div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">Total</span>
+                            <span class="fw-bold fs-4">—</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card adminuiux-card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <h6 class="mb-3">Client</h6>
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="avatar avatar-36 rounded-circle bg-theme-1 text-white d-flex align-items-center justify-content-center" style="font-size:12px;">CC</span>
+                            <div>
+                                <p class="mb-0 fw-medium small">Client non renseigné</p>
+                                <p class="small text-secondary mb-0">Non identifié</p>
+                            </div>
+                        </div>
+                        <a href="gesco-clients-detail.html" class="btn btn-sm btn-outline-secondary w-100 mt-2 disabled" aria-disabled="true" style="pointer-events:none;opacity:0.6;">Voir la fiche client</a>
+                    </div>
+                </div>
+                <div class="card adminuiux-card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h6 class="mb-3">Paiement</h6>
+                        <p class="small text-secondary mb-1">Mode</p>
+                        <p class="fw-medium mb-3">—</p>
+                        <p class="small text-secondary mb-1">Montant reçu</p>
+                        <p class="fw-medium mb-3">—</p>
+                        <p class="small text-secondary mb-1">Monnaie rendue</p>
+                        <p class="fw-medium mb-0">—</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="modal fade" id="annulerVente" tabindex="-1" aria-labelledby="annulerVenteLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+            <div class="modal-header border-0 pb-0">
+                <div class="d-flex align-items-start gap-3">
+                    <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-danger-subtle text-danger flex-shrink-0" style="width:52px;height:52px;font-size:1.35rem;">
+                        <i class="bi bi-exclamation-triangle"></i>
+                    </span>
+                    <div>
+                        <h5 class="modal-title mb-1" id="annulerVenteLabel">Annuler la vente</h5>
+                        <p class="small text-secondary mb-0">Cette action est définitive et sera tracée dans le journal d’activité.</p>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body pt-3">
+                <div class="rounded-3 border bg-light p-3 mb-3">
+                    <div class="d-flex justify-content-between gap-3 small mb-2">
+                        <span class="text-secondary">Vente</span>
+                        <span class="fw-semibold text-end" id="annuler-vente-reference">—</span>
+                    </div>
+                    <div class="d-flex justify-content-between gap-3 small mb-2">
+                        <span class="text-secondary">Client</span>
+                        <span class="fw-semibold text-end" id="annuler-vente-client">—</span>
+                    </div>
+                    <div class="d-flex justify-content-between gap-3 small">
+                        <span class="text-secondary">Montant total</span>
+                        <span class="fw-semibold text-end" id="annuler-vente-total">—</span>
+                    </div>
+                </div>
+                <div class="alert alert-warning small mb-0" role="alert">
+                    <i class="bi bi-arrow-counterclockwise"></i> Les articles seront remis en stock et la facture liée sera annulée.
+                </div>
+                <div class="alert alert-danger d-none mb-0 mt-3" id="annuler-vente-error" role="alert"></div>
+            </div>
+            <div class="modal-footer border-0 pt-0">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Conserver la vente</button>
+                <button type="button" class="btn btn-danger" id="annuler-vente-confirmer"><i class="bi bi-x-circle"></i> Confirmer l’annulation</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+
+
+
+                    <!-- ai-chat  -->
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="ai-chat" data-bs-scroll="true" data-bs-backdrop="false" style="--bs-offcanvas-width: 500px;">
+    <div class="offcanvas-header border-bottom">
+        <div class="flex-grow-1">
+            <h6 class="mb-0">AI Assistant</h6>
+            <p class="text-secondary small">Toujours actif</p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
+    </div>
+
+    <!-- Messages Body Container (matching ecommerce-ai.html layout) -->
+    <div class="offcanvas-body chat-list overflow-y-auto px-3" id="ai-offcanvas-messages-container">
+        <!-- Messages will be dynamically rendered here -->
+    </div>
+
+    <!-- Chat Input Area with Suggestions (matching ecommerce-ai.html layout) -->
+    <div class="offcanvas-footer border-top p-3 bg-light-opacity">
+        <div class="card adminuiux-card border-0 shadow-none bg-none mb-0">
+            <div class="card-header pb-0 bg-none border-0 px-0 pt-0">
+                <p class="small text-secondary mb-2">Tip: Select chips/tags (Preset) below to see preview different content.</p>
+                <!-- Suggestion Pills / Quick prompts -->
+                <div class="d-flex flex-wrap" id="ai-offcanvas-suggestions-bar">
+                    <!-- Suggestions will be dynamically rendered here -->
+                </div>
+            </div>
+            <div class="card-body px-0 pb-0 pt-2">
+                <textarea class="form-control bg-none mb-3" id="ai-offcanvas-input" placeholder="Type your message... " style="resize: none;" rows="1"></textarea>
+                <div class="row gx-3">
+                    <div class="col-auto"><button class="btn btn-square btn-link border"><i class="bi bi-emoji-smile"></i></button></div>
+                    <div class="col-auto"><button class="btn btn-square btn-link border"><i class="bi bi-paperclip"></i></button></div>
+                    <div class="col"></div>
+                    <div class="col-auto"><button class="btn btn-square btn-link border" type="button" id="ai-offcanvas-send-btn" onclick="handleOffcanvasSendMessage()"><i class="bi bi-send"></i></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal : Génération du bon de livraison -->
+<div class="modal fade" id="modalLivraison" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-truck"></i> Générer le bon de livraison</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body">
+                <p class="small text-secondary">Cette vente sera-t-elle livrée en totalité ou partiellement ?</p>
+                <div class="d-flex gap-2 mb-3">
+                    <button type="button" class="btn btn-outline-secondary flex-fill" data-livraison-type="complete">
+                        <i class="bi bi-check2-circle"></i> Livraison complète
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary flex-fill" data-livraison-type="partielle">
+                        <i class="bi bi-box-seam"></i> Livraison partielle
+                    </button>
+                </div>
+
+                <div id="livraison-partielle-block" class="d-none">
+                    <hr>
+                    <h6 class="mb-2">Quantités à livrer</h6>
+                    <div class="table-responsive">
+                        <table class="table adminuiux-table align-middle mb-0">
+                            <thead>
+                                <tr><th>Produit</th><th class="text-center">Commandé</th><th class="text-center">À livrer</th></tr>
+                            </thead>
+                            <tbody id="livraison-lignes-body"></tbody>
+                        </table>
+                    </div>
+                    <div class="alert alert-danger mt-3 mb-0 d-none" id="livraison-error"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link text-secondary" data-bs-dismiss="modal">Retour</button>
+                <button type="button" class="btn btn-theme" id="btn-livraison-valider" disabled>Générer le bon de livraison</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Offcanvas Interactive Javascript -->
+<script src="assets/js/ecommerce/ecommerce-ai-chat.js"></script>
+
+                        <!-- footer -->
+                        <!-- standard footer -->
+<!-- include:footer -->
+<!-- Page Level js -->
+
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/vente-detail.js"></script>
+    <script src="assets/js/profile.js"></script>
+        <script src="assets/js/role-guard.js"></script>
+        <script src="assets/js/auth-guard.js"></script>
+</body>
+
+
+</html>
